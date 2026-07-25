@@ -1,0 +1,684 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { NavTab, Student12thGrade, AnnualPlanDocument, PastYksExamDocument } from '../types';
+import { jsPDF } from 'jspdf';
+import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
+import {
+  X,
+  Send,
+  Sparkles,
+  Bot,
+  FileText,
+  Download,
+  UserCheck,
+  ChevronRight,
+  Maximize2,
+  Minimize2,
+  Loader2,
+  ListFilter,
+  CheckCircle2,
+  BookOpen,
+} from 'lucide-react';
+
+interface AiAssistantWidgetProps {
+  activeTab: NavTab;
+  onSelectTab: (tab: NavTab) => void;
+  students: Student12thGrade[];
+  selectedStudent: Student12thGrade | null;
+  onSelectStudent: (student: Student12thGrade | null) => void;
+  annualPlans: AnnualPlanDocument[];
+  yksExams: PastYksExamDocument[];
+  teacherName: string;
+}
+
+interface Message {
+  id: string;
+  sender: 'user' | 'assistant';
+  text: string;
+  timestamp: string;
+  actionExecuted?: string;
+  hasPdfDownload?: boolean;
+  hasDocxDownload?: boolean;
+}
+
+export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
+  activeTab,
+  onSelectTab,
+  students,
+  selectedStudent,
+  onSelectStudent,
+  annualPlans,
+  yksExams,
+  teacherName,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [inputMsg, setInputMsg] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  // SpongeBob SVG Graphic Vector Component
+  const SpongeBobSvg = () => (
+    <svg viewBox="0 0 100 100" className="w-full h-full object-cover">
+      <defs>
+        <linearGradient id="sbYellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#fef08a" />
+          <stop offset="100%" stopColor="#eab308" />
+        </linearGradient>
+        <linearGradient id="sbEyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#38bdf8" />
+          <stop offset="100%" stopColor="#0284c7" />
+        </linearGradient>
+      </defs>
+      {/* Background Circle */}
+      <circle cx="50" cy="50" r="50" fill="#0f172a" />
+
+      {/* Main Sponge Body */}
+      <rect x="18" y="10" width="64" height="60" rx="8" fill="url(#sbYellowGrad)" stroke="#ca8a04" strokeWidth="2" />
+
+      {/* Sponge Pores */}
+      <circle cx="25" cy="18" r="4" fill="#ca8a04" opacity="0.35" />
+      <circle cx="75" cy="20" r="4.5" fill="#ca8a04" opacity="0.35" />
+      <circle cx="22" cy="55" r="3.5" fill="#ca8a04" opacity="0.35" />
+      <circle cx="76" cy="58" r="4" fill="#ca8a04" opacity="0.35" />
+      <circle cx="32" cy="14" r="2.5" fill="#ca8a04" opacity="0.3" />
+
+      {/* Large Round Eyes */}
+      <circle cx="36" cy="34" r="14" fill="#ffffff" stroke="#1e293b" strokeWidth="1.5" />
+      <circle cx="64" cy="34" r="14" fill="#ffffff" stroke="#1e293b" strokeWidth="1.5" />
+
+      {/* Blue Irises */}
+      <circle cx="38" cy="34" r="6.5" fill="url(#sbEyeGrad)" />
+      <circle cx="62" cy="34" r="6.5" fill="url(#sbEyeGrad)" />
+
+      {/* Pupils */}
+      <circle cx="38" cy="34" r="3" fill="#020617" />
+      <circle cx="62" cy="34" r="3" fill="#020617" />
+      <circle cx="39.5" cy="32.5" r="1" fill="#ffffff" />
+      <circle cx="63.5" cy="32.5" r="1" fill="#ffffff" />
+
+      {/* Eyelashes */}
+      <line x1="30" y1="18" x2="28" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      <line x1="36" y1="16" x2="36" y2="10" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      <line x1="42" y1="18" x2="44" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+
+      <line x1="58" y1="18" x2="56" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      <line x1="64" y1="16" x2="64" y2="10" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      <line x1="70" y1="18" x2="72" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+
+      {/* Nose */}
+      <path d="M 50 36 C 54 36, 55 46, 50 46 C 47 46, 46 41, 50 36 Z" fill="url(#sbYellowGrad)" stroke="#ca8a04" strokeWidth="1.8" />
+
+      {/* Freckle Cheeks */}
+      <path d="M 22 42 Q 16 42 22 48" fill="none" stroke="#ef4444" strokeWidth="1.5" />
+      <circle cx="22" cy="44" r="0.8" fill="#ef4444" />
+      <circle cx="25" cy="43" r="0.8" fill="#ef4444" />
+      <circle cx="24" cy="46" r="0.8" fill="#ef4444" />
+
+      <path d="M 78 42 Q 84 42 78 48" fill="none" stroke="#ef4444" strokeWidth="1.5" />
+      <circle cx="78" cy="44" r="0.8" fill="#ef4444" />
+      <circle cx="75" cy="43" r="0.8" fill="#ef4444" />
+      <circle cx="76" cy="46" r="0.8" fill="#ef4444" />
+
+      {/* Wide Smile */}
+      <path d="M 28 50 Q 50 68 72 50" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" />
+
+      {/* Two Buck Teeth */}
+      <rect x="42" y="58" width="6" height="7" rx="0.5" fill="#ffffff" stroke="#0f172a" strokeWidth="1.2" />
+      <rect x="52" y="58" width="6" height="7" rx="0.5" fill="#ffffff" stroke="#0f172a" strokeWidth="1.2" />
+
+      {/* White Shirt Collar */}
+      <rect x="18" y="70" width="64" height="12" fill="#ffffff" />
+      <polygon points="34,70 50,82 30,70" fill="#ffffff" />
+      <polygon points="66,70 50,82 70,70" fill="#ffffff" />
+
+      {/* Red Tie */}
+      <polygon points="46,70 54,70 56,86 50,92 44,86" fill="#dc2626" stroke="#991b1b" strokeWidth="1" />
+
+      {/* Brown Square Pants */}
+      <rect x="18" y="82" width="64" height="18" fill="#854d0e" />
+      <rect x="25" y="85" width="8" height="3" fill="#0f172a" />
+      <rect x="41" y="85" width="8" height="3" fill="#0f172a" />
+      <rect x="51" y="85" width="8" height="3" fill="#0f172a" />
+      <rect x="67" y="85" width="8" height="3" fill="#0f172a" />
+    </svg>
+  );
+
+  // Chat history with initial greeting requirement
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 'msg-init-1',
+      sender: 'assistant',
+      text: 'Merhaba hocam! Ben SüngerBob 🧽✨ Size ve öğrencilerimize nasıl yardımcı olabilirim?',
+      timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+    },
+  ]);
+
+  const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to bottom when messages update
+  useEffect(() => {
+    if (isOpen) {
+      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, isOpen]);
+
+  // Execute embedded AI action tags like [ACTION:NAVIGATE:tubitak] or [ACTION:SELECT_STUDENT:Caner Yıldız]
+  const processAction = (text: string) => {
+    let cleanText = text;
+    let actionInfo = '';
+    let triggerPdf = false;
+    let triggerDocx = false;
+
+    // 1. Navigation Action
+    const navMatch = text.match(/\[ACTION:NAVIGATE:([a-z-]+)\]/i);
+    if (navMatch && navMatch[1]) {
+      const targetTab = navMatch[1] as NavTab;
+      onSelectTab(targetTab);
+      actionInfo = `Sayfaya yönlendirildi: ${getTabLabel(targetTab)}`;
+      cleanText = cleanText.replace(navMatch[0], '').trim();
+    }
+
+    // 2. Student Selection Action
+    const stdMatch = text.match(/\[ACTION:SELECT_STUDENT:(.+?)\]/i);
+    if (stdMatch && stdMatch[1]) {
+      const query = stdMatch[1].trim().toLowerCase();
+      const found = students.find(
+        (s) =>
+          s.id === stdMatch[1].trim() ||
+          s.name.toLowerCase().includes(query) ||
+          s.name.toLowerCase().startsWith(query)
+      );
+      if (found) {
+        onSelectTab('students');
+        onSelectStudent(found);
+        actionInfo = `Öğrenci Detayı Açıldı: ${found.name}`;
+      } else if (students.length > 0) {
+        onSelectTab('students');
+        actionInfo = `Öğrenciler Listesi Açıldı`;
+      }
+      cleanText = cleanText.replace(stdMatch[0], '').trim();
+    }
+
+    // 3. Export PDF Action
+    if (text.includes('[ACTION:EXPORT_PDF]')) {
+      triggerPdf = true;
+      cleanText = cleanText.replace('[ACTION:EXPORT_PDF]', '').trim();
+      generateSummaryPDF();
+      actionInfo = 'PDF Raporu İndirildi';
+    }
+
+    // 4. Export Word Action
+    if (text.includes('[ACTION:EXPORT_WORD]')) {
+      triggerDocx = true;
+      cleanText = cleanText.replace('[ACTION:EXPORT_WORD]', '').trim();
+      generateSummaryDOCX();
+      actionInfo = 'Word (DOCX) Raporu İndirildi';
+    }
+
+    return { cleanText, actionInfo, triggerPdf, triggerDocx };
+  };
+
+  const getTabLabel = (tab: NavTab) => {
+    switch (tab) {
+      case 'students':
+        return 'Öğrenciler';
+      case 'annual-plans':
+        return 'Yıllık Planlar';
+      case 'yks-exams':
+        return 'YKS Geçmiş Denemeler';
+      case 'ai-tools':
+        return 'Akıllı Müfredat & Soru';
+      case 'ai-apps':
+        return 'Yapay Zeka Araçları';
+      case 'tubitak':
+        return 'TÜBİTAK Projeleri';
+      case 'teknofest':
+        return 'TEKNOFEST Projeleri';
+      default:
+        return 'Sayfa';
+    }
+  };
+
+  // Helper to Send Message
+  const handleSendMessage = async (textToSend?: string) => {
+    const text = textToSend || inputMsg;
+    if (!text.trim() || isLoading) return;
+
+    const userMessageObj: Message = {
+      id: `msg-${Date.now()}`,
+      sender: 'user',
+      text: text.trim(),
+      timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+    };
+
+    setMessages((prev) => [...prev, userMessageObj]);
+    if (!textToSend) setInputMsg('');
+    setIsLoading(true);
+
+    // Build context data for server AI
+    const contextData = {
+      activeTab,
+      selectedStudentName: selectedStudent ? selectedStudent.name : 'Yok',
+      studentCount: students.length,
+      studentsSummary: students.slice(0, 15).map((s) => ({
+        id: s.id,
+        name: s.name,
+        class: s.className,
+        targetUni: s.targetUniversity,
+        targetDept: s.targetDepartment,
+        tytNet: s.tytAverageNet,
+        aytNet: s.aytAverageNet,
+        weakTopics: s.weakTopics,
+      })),
+      yksExamsCount: yksExams.length,
+      annualPlansCount: annualPlans.length,
+    };
+
+    try {
+      const response = await fetch('/api/assistant-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userMessage: text.trim(),
+          chatHistory: messages.slice(-6),
+          contextData,
+        }),
+      });
+
+      const data = await response.json();
+      const rawReply = data.reply || 'Anlaşıldı hocam, başka nasıl yardımcı olabilirim?';
+
+      const { cleanText, actionInfo, triggerPdf, triggerDocx } = processAction(rawReply);
+
+      const assistantMsgObj: Message = {
+        id: `msg-ai-${Date.now()}`,
+        sender: 'assistant',
+        text: cleanText || 'İstediğiniz eylem gerçekleştirildi hocam.',
+        timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+        actionExecuted: actionInfo || undefined,
+        hasPdfDownload: triggerPdf,
+        hasDocxDownload: triggerDocx,
+      };
+
+      setMessages((prev) => [...prev, assistantMsgObj]);
+    } catch (e) {
+      console.error('Assistant Send Error', e);
+      // Fallback response
+      const { cleanText, actionInfo } = processAction(text.trim());
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `msg-ai-${Date.now()}`,
+          sender: 'assistant',
+          text: cleanText ? `Anlaşıldı hocam. ${cleanText}` : 'Tüm verileriniz hazır hocam, ne yapmamı istersiniz?',
+          timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
+          actionExecuted: actionInfo || undefined,
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Generate PDF Summary Export
+  const generateSummaryPDF = () => {
+    const doc = new jsPDF();
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(18);
+    doc.setTextColor(30, 41, 59);
+    doc.text('OKUL MENTORLUK & YKS AKILLI RAPORU', 14, 20);
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100, 116, 139);
+    doc.text(`Olusturan: Serdar Aktas | Tarih: ${new Date().toLocaleDateString('tr-TR')}`, 14, 28);
+    doc.line(14, 32, 196, 32);
+
+    let yPos = 40;
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.setTextColor(15, 23, 42);
+    doc.text('1. Ogrenci Performans Ve Net Ozeti', 14, yPos);
+    yPos += 8;
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+
+    students.forEach((std, idx) => {
+      if (yPos > 270) {
+        doc.addPage();
+        yPos = 20;
+      }
+      doc.setFont('helvetica', 'bold');
+      doc.text(`${idx + 1}. ${std.name} (${std.className}) - Hedef: ${std.targetUniversity} / ${std.targetDepartment}`, 14, yPos);
+      yPos += 5;
+      doc.setFont('helvetica', 'normal');
+      doc.text(`   TYT Net: ${std.tytAverageNet} | AYT Net: ${std.aytAverageNet} | Zayif Konular: ${std.weakTopics.slice(0, 3).join(', ')}`, 14, yPos);
+      yPos += 7;
+    });
+
+    yPos += 6;
+    if (yPos > 260) {
+      doc.addPage();
+      yPos = 20;
+    }
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.text('2. Kayitli Projeler Ve Dokumanlar', 14, yPos);
+    yPos += 8;
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`• Toplam Kayitli YKS Deneme Sınavı: ${yksExams.length} adet`, 14, yPos);
+    yPos += 6;
+    doc.text(`• Toplam Yillik Müfredat Plani: ${annualPlans.length} adet`, 14, yPos);
+    yPos += 12;
+
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(148, 163, 184);
+    doc.text('Bu rapor Akilli AI Asistani tarafindan otomatik olusturulmustur.', 14, yPos);
+
+    doc.save(`Mentorluk_Genel_Ozet_Raporu_${Date.now()}.pdf`);
+  };
+
+  // Generate Word DOCX Summary Export
+  const generateSummaryDOCX = async () => {
+    const doc = new Document({
+      sections: [
+        {
+          children: [
+            new Paragraph({
+              text: 'OKUL MENTÖRLÜK VE YKS ÖĞRENCİ AKILLI RAPORU',
+              heading: HeadingLevel.HEADING_1,
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: `Raporu Düzenleyen: Serdar Aktaş | Tarih: ${new Date().toLocaleDateString('tr-TR')}`,
+                  italics: true,
+                }),
+              ],
+            }),
+            new Paragraph({ text: '' }),
+            new Paragraph({
+              text: '1. Öğrenci Listesi ve Akademik Durumu',
+              heading: HeadingLevel.HEADING_2,
+            }),
+            ...students.map(
+              (s, i) =>
+                new Paragraph({
+                  children: [
+                    new TextRun({ text: `${i + 1}. ${s.name} (${s.className}): `, bold: true }),
+                    new TextRun({
+                      text: `Hedef: ${s.targetUniversity} - ${s.targetDepartment} | TYT Net: ${s.tytAverageNet} | AYT Net: ${s.aytAverageNet} | Zayıf Konular: ${s.weakTopics.join(', ')}`,
+                    }),
+                  ],
+                })
+            ),
+            new Paragraph({ text: '' }),
+            new Paragraph({
+              text: '2. Genel İstatistikler',
+              heading: HeadingLevel.HEADING_2,
+            }),
+            new Paragraph({
+              text: `• Toplam Kayıtlı Öğrenci Sayısı: ${students.length}`,
+            }),
+            new Paragraph({
+              text: `• Geçmiş YKS İl/İlçe Deneme Sayısı: ${yksExams.length}`,
+            }),
+            new Paragraph({
+              text: `• Müfredat Yıllık Plan Sayısı: ${annualPlans.length}`,
+            }),
+            new Paragraph({ text: '' }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: 'Bu belge Akıllı Yapay Zeka Asistanı tarafından üretilmiştir.',
+                  italics: true,
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+
+    const blob = await Packer.toBlob(doc);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Mentorluk_Genel_Ozet_Raporu_${Date.now()}.docx`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="fixed bottom-5 right-5 z-50 font-sans">
+      {/* ========================================================================= */}
+      {/* 1. CLOSED LAUNCHER BUTTON (COMPACT FLOATING ANIME AVATAR BUTTON)          */}
+      {/* ========================================================================= */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="group relative flex items-center gap-3 bg-gradient-to-r from-slate-900 via-amber-950/80 to-slate-900 border-2 border-amber-500/60 hover:border-amber-400 text-white rounded-full p-2.5 pr-5 shadow-2xl shadow-amber-950/80 transition-all duration-300 hover:scale-105 cursor-pointer active:scale-95"
+          title="SüngerBob Akıllı Yapay Zeka Asistanı"
+        >
+          {/* SpongeBob Avatar Graphic Frame */}
+          <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-amber-400 bg-amber-500/20 shrink-0 shadow-inner flex items-center justify-center">
+            <SpongeBobSvg />
+            {/* Glowing online dot */}
+            <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-slate-900 rounded-full animate-pulse" />
+          </div>
+
+          <div className="flex flex-col text-left">
+            <span className="text-xs font-bold text-amber-200 group-hover:text-amber-100 transition flex items-center gap-1">
+              SüngerBob Asistan <Sparkles className="w-3 h-3 text-amber-300 animate-bounce" />
+            </span>
+            <span className="text-[10px] text-amber-300/80 font-medium">Hızlı & Zeki Sistem Rehbari</span>
+          </div>
+        </button>
+      )}
+
+      {/* ========================================================================= */}
+      {/* 2. OPEN CHAT POPUP WINDOW                                                 */}
+      {/* ========================================================================= */}
+      {isOpen && (
+        <div
+          className={`bg-slate-900/95 border border-amber-500/40 rounded-3xl shadow-2xl backdrop-blur-2xl flex flex-col transition-all duration-300 overflow-hidden ${
+            isExpanded
+              ? 'w-[90vw] md:w-[680px] h-[85vh] max-h-[750px]'
+              : 'w-[92vw] sm:w-[400px] md:w-[430px] h-[540px] max-h-[85vh]'
+          }`}
+        >
+          {/* --- CHAT HEADER --- */}
+          <div className="bg-gradient-to-r from-slate-950 via-amber-950/90 to-slate-950 border-b border-amber-500/30 p-3.5 px-4 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-3">
+              {/* SpongeBob Avatar Box */}
+              <div className="relative w-10 h-10 rounded-full border-2 border-amber-400 bg-amber-950/50 overflow-hidden shrink-0 shadow-lg">
+                <SpongeBobSvg />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border border-slate-900 rounded-full" />
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black text-amber-100 flex items-center gap-1.5">
+                  SüngerBob AI Asistanı 🧽
+                  <span className="px-1.5 py-0.2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[9px] rounded-full font-bold">
+                    HIZLI & CANLI
+                  </span>
+                </h3>
+                <p className="text-[10px] text-amber-300/80 font-medium truncate max-w-[200px]">
+                  {teacherName} Hocam • SüngerBob Göreve Hazır!
+                </p>
+              </div>
+            </div>
+
+            {/* Window Controls */}
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition cursor-pointer"
+                title={isExpanded ? 'Küçült' : 'Genişlet'}
+              >
+                {isExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1.5 text-slate-400 hover:text-white hover:bg-red-500/20 hover:text-red-300 rounded-lg transition cursor-pointer"
+                title="Kapat"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* --- CHAT MESSAGES CONTAINER --- */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3.5 text-xs">
+            {messages.map((msg, idx) => (
+              <div
+                key={msg.id || idx}
+                className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
+              >
+                {/* Bubble Container */}
+                <div
+                  className={`max-w-[85%] rounded-2xl p-3 space-y-1.5 leading-relaxed shadow-md ${
+                    msg.sender === 'user'
+                      ? 'bg-indigo-600 text-white rounded-br-none'
+                      : 'bg-slate-800/90 border border-slate-700/80 text-slate-100 rounded-bl-none'
+                  }`}
+                >
+                  <p className="whitespace-pre-wrap">{msg.text}</p>
+
+                  {/* Executed Action Badge */}
+                  {msg.actionExecuted && (
+                    <div className="mt-1.5 pt-1.5 border-t border-slate-700/60 flex items-center gap-1.5 text-[10px] text-emerald-400 font-bold">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                      <span>{msg.actionExecuted}</span>
+                    </div>
+                  )}
+
+                  {/* Inline PDF / DOCX Download Triggers */}
+                  {(msg.hasPdfDownload || msg.hasDocxDownload) && (
+                    <div className="mt-2 flex flex-wrap gap-2 pt-2 border-t border-slate-700">
+                      {msg.hasPdfDownload && (
+                        <button
+                          onClick={generateSummaryPDF}
+                          className="px-2.5 py-1 bg-rose-600/30 hover:bg-rose-600 text-rose-200 border border-rose-500/40 rounded-lg text-[10px] font-bold transition flex items-center gap-1 cursor-pointer"
+                        >
+                          <Download className="w-3 h-3" />
+                          <span>PDF Belgesini İndir</span>
+                        </button>
+                      )}
+                      {msg.hasDocxDownload && (
+                        <button
+                          onClick={generateSummaryDOCX}
+                          className="px-2.5 py-1 bg-blue-600/30 hover:bg-blue-600 text-blue-200 border border-blue-500/40 rounded-lg text-[10px] font-bold transition flex items-center gap-1 cursor-pointer"
+                        >
+                          <Download className="w-3 h-3" />
+                          <span>Word (DOCX) İndir</span>
+                        </button>
+                      )}
+                    </div>
+                  )}
+
+                  <span
+                    className={`block text-[9px] text-right opacity-70 ${
+                      msg.sender === 'user' ? 'text-indigo-200' : 'text-slate-400'
+                    }`}
+                  >
+                    {msg.timestamp}
+                  </span>
+                </div>
+              </div>
+            ))}
+
+            {isLoading && (
+              <div className="flex items-center gap-2 text-indigo-300 bg-indigo-950/40 border border-indigo-500/30 p-2.5 rounded-2xl max-w-[220px]">
+                <Loader2 className="w-3.5 h-3.5 animate-spin text-indigo-400" />
+                <span className="text-[11px] font-medium">Asistan yanıt hazırlıyor...</span>
+              </div>
+            )}
+
+            <div ref={chatEndRef} />
+          </div>
+
+          {/* --- QUICK COMMAND SHORTCUTS --- */}
+          <div className="p-2 px-3 bg-slate-950/80 border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto no-scrollbar shrink-0">
+            <span className="text-[10px] font-bold text-slate-500 shrink-0">Hızlı Komutlar:</span>
+
+            <button
+              onClick={() => handleSendMessage('Nasılsın SüngerBob?')}
+              className="px-2.5 py-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-[10px] font-bold shrink-0 transition flex items-center gap-1 cursor-pointer"
+            >
+              <span>🧽 Nasılsın?</span>
+            </button>
+
+            <button
+              onClick={() => handleSendMessage('Öğrencilerin akademik özetini PDF olarak indir')}
+              className="px-2.5 py-1 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded-full text-[10px] font-bold shrink-0 transition flex items-center gap-1 cursor-pointer"
+            >
+              <FileText className="w-3 h-3 text-rose-400" />
+              <span>PDF İndir</span>
+            </button>
+
+            <button
+              onClick={() => handleSendMessage('Öğrencilerin akademik özetini Word (.docx) olarak indir')}
+              className="px-2.5 py-1 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-[10px] font-bold shrink-0 transition flex items-center gap-1 cursor-pointer"
+            >
+              <FileText className="w-3 h-3 text-blue-400" />
+              <span>Word İndir</span>
+            </button>
+
+            <button
+              onClick={() => handleSendMessage('TÜBİTAK projeleri sayfasına git')}
+              className="px-2.5 py-1 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full text-[10px] font-bold shrink-0 transition cursor-pointer"
+            >
+              TÜBİTAK'a Git
+            </button>
+
+            <button
+              onClick={() => handleSendMessage('YKS deneme sınavlarını aç')}
+              className="px-2.5 py-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-[10px] font-bold shrink-0 transition cursor-pointer"
+            >
+              YKS Denemeleri
+            </button>
+
+            <button
+              onClick={() => handleSendMessage('Caner Yıldız detay sayfasını aç')}
+              className="px-2.5 py-1 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full text-[10px] font-bold shrink-0 transition cursor-pointer"
+            >
+              Caner'i Aç
+            </button>
+          </div>
+
+          {/* --- CHAT INPUT FORM --- */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSendMessage();
+            }}
+            className="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2 shrink-0"
+          >
+            <input
+              type="text"
+              value={inputMsg}
+              onChange={(e) => setInputMsg(e.target.value)}
+              placeholder="Bir komut yazın (Örn: Zeynep'i aç, Raporu PDF indir)..."
+              className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2 text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 transition"
+              disabled={isLoading}
+            />
+            <button
+              type="submit"
+              disabled={!inputMsg.trim() || isLoading}
+              className="p-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white rounded-xl transition cursor-pointer shrink-0"
+              title="Gönder"
+            >
+              <Send className="w-4 h-4" />
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+};
