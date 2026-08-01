@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavTab, Student12thGrade, TeacherUser, AnnualPlanDocument, PastYksExamDocument } from './types';
 import { ALL_12TH_GRADE_STUDENTS, INITIAL_ANNUAL_PLANS, INITIAL_YKS_EXAMS } from './data/studentsData';
+import { fetchSharedCloudData, saveSharedCloudData } from './lib/supabase';
 import { LoginPage } from './components/LoginPage';
 import { Sidebar } from './components/Sidebar';
 import { StudentsListView } from './components/StudentsListView';
@@ -36,103 +37,116 @@ export default function App() {
   // Navigation State (First tab is 'students')
   const [activeTab, setActiveTab] = useState<NavTab>('students');
 
-  // Students data with localStorage persistence
+  // Initial local states (hydrated from cache or initial static data)
   const [students, setStudents] = useState<Student12thGrade[]>(() => {
     try {
-      const v = localStorage.getItem('yks_students_data_v5');
-      if (v === '5') {
-        const saved = localStorage.getItem('yks_students_data');
-        if (saved !== null) {
-          return JSON.parse(saved);
-        }
+      const saved = localStorage.getItem('yks_students_data');
+      if (saved !== null) {
+        return JSON.parse(saved);
       }
-    } catch (e) {
-      console.error('Failed to parse saved students data:', e);
-    }
-    localStorage.setItem('yks_students_data_v5', '5');
-    localStorage.setItem('yks_students_data', JSON.stringify(ALL_12TH_GRADE_STUDENTS));
+    } catch (e) {}
     return ALL_12TH_GRADE_STUDENTS;
   });
 
   const [selectedStudent, setSelectedStudent] = useState<Student12thGrade | null>(null);
 
-  // Annual Plans data with localStorage persistence (allows empty array [])
   const [annualPlans, setAnnualPlans] = useState<AnnualPlanDocument[]>(() => {
     try {
       const saved = localStorage.getItem('yks_annual_plans_data');
       if (saved !== null) {
         return JSON.parse(saved);
       }
-    } catch (e) {
-      console.error('Failed to parse saved annual plans data:', e);
-    }
+    } catch (e) {}
     return INITIAL_ANNUAL_PLANS;
   });
 
-  // Past YKS Exams data with localStorage persistence (allows empty array [])
   const [yksExams, setYksExams] = useState<PastYksExamDocument[]>(() => {
     try {
       const saved = localStorage.getItem('yks_exams_data');
       if (saved !== null) {
         return JSON.parse(saved);
       }
-    } catch (e) {
-      console.error('Failed to parse saved exams data:', e);
-    }
+    } catch (e) {}
     return INITIAL_YKS_EXAMS;
   });
 
-  // Sync state changes automatically to localStorage and Server API
+  // Load latest cloud data from Supabase on mount
+  useEffect(() => {
+    let active = true;
+
+    async function syncFromCloud() {
+      try {
+        const cloudStudents = await fetchSharedCloudData<Student12thGrade[]>('students', students);
+        if (active && Array.isArray(cloudStudents) && cloudStudents.length > 0) {
+          setStudents(cloudStudents);
+        }
+
+        const cloudPlans = await fetchSharedCloudData<AnnualPlanDocument[]>('annual_plans', annualPlans);
+        if (active && Array.isArray(cloudPlans)) {
+          setAnnualPlans(cloudPlans);
+        }
+
+        const cloudExams = await fetchSharedCloudData<PastYksExamDocument[]>('yks_exams', yksExams);
+        if (active && Array.isArray(cloudExams)) {
+          setYksExams(cloudExams);
+        }
+      } catch (err) {
+        console.warn('Initial cloud sync warning:', err);
+      }
+    }
+
+    syncFromCloud();
+
+    // Live sync polling every 10 seconds for multi-user synchronization across devices
+    const interval = setInterval(() => {
+      syncFromCloud();
+    }, 10000);
+
+    return () => {
+      active = false;
+      clearInterval(interval);
+    };
+  }, []);
+
+  // Save changes to localStorage and Supabase Cloud
   useEffect(() => {
     try {
       localStorage.setItem('yks_teacher_session', JSON.stringify(teacher));
-    } catch (e) {
-      console.error('Failed to save teacher session to localStorage:', e);
-    }
+    } catch (e) {}
   }, [teacher]);
 
   useEffect(() => {
     try {
       localStorage.setItem('yks_students_data', JSON.stringify(students));
+      saveSharedCloudData('students', students);
     } catch (e) {
-      console.error('Failed to save students to localStorage:', e);
+      console.error('Failed to save students data:', e);
     }
   }, [students]);
 
-  // Load annual plans from server on mount
-  useEffect(() => {
-    fetch('/api/annual-plans')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setAnnualPlans(data);
-          localStorage.setItem('yks_annual_plans_data', JSON.stringify(data));
-        }
-      })
-      .catch((err) => console.error('Failed to load annual plans from server:', err));
-  }, []);
-
-  // Save annual plans to server disk whenever state changes
   useEffect(() => {
     try {
       localStorage.setItem('yks_annual_plans_data', JSON.stringify(annualPlans));
+      saveSharedCloudData('annual_plans', annualPlans);
       fetch('/api/annual-plans', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(annualPlans),
-      }).catch((err) => console.error('Failed to save annual plans to server:', err));
+      }).catch(() => {});
     } catch (e) {
-      console.error('Failed to save annual plans to localStorage:', e);
+      console.error('Failed to save annual plans:', e);
     }
   }, [annualPlans]);
 
   useEffect(() => {
     try {
       localStorage.setItem('yks_exams_data', JSON.stringify(yksExams));
+      saveSharedCloudData('yks_exams', yksExams);
     } catch (e) {
-      console.error('Failed to save exams to localStorage:', e);
+      console.error('Failed to save exams data:', e);
     }
   }, [yksExams]);
+
 
   // Determine if current user is Manager (Serdar Aktaş / Yönetici)
   const isManager =

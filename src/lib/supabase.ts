@@ -230,3 +230,82 @@ export async function fetchAllRegisteredUsers(): Promise<AppUserRecord[]> {
 
   return Array.from(map.values());
 }
+
+/**
+ * Shared Cloud Data Persistence via Supabase
+ * Synchronizes Students, Annual Plans, and YKS Exams across all devices & users.
+ */
+export async function fetchSharedCloudData<T>(key: string, fallback: T): Promise<T> {
+  try {
+    // 1. Check Supabase 'app_store' table
+    const { data: storeData, error: storeError } = await supabase
+      .from('app_store')
+      .select('content')
+      .eq('key', key)
+      .maybeSingle();
+
+    if (!storeError && storeData && storeData.content !== undefined && storeData.content !== null) {
+      try {
+        localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(storeData.content));
+      } catch (e) {}
+      return storeData.content as T;
+    }
+
+    // 2. Check Supabase 'app_settings' table
+    const { data: settingsData, error: settingsError } = await supabase
+      .from('app_settings')
+      .select('value')
+      .eq('id', key)
+      .maybeSingle();
+
+    if (!settingsError && settingsData && settingsData.value !== undefined && settingsData.value !== null) {
+      const parsed = typeof settingsData.value === 'string' ? JSON.parse(settingsData.value) : settingsData.value;
+      try {
+        localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(parsed));
+      } catch (e) {}
+      return parsed as T;
+    }
+  } catch (err) {
+    console.warn(`Supabase cloud fetch error for "${key}":`, err);
+  }
+
+  // 3. Fallback to localStorage cache
+  try {
+    const cached = localStorage.getItem(`cloud_cache_${key}`);
+    if (cached) {
+      return JSON.parse(cached);
+    }
+  } catch (e) {}
+
+  return fallback;
+}
+
+export async function saveSharedCloudData<T>(key: string, content: T): Promise<boolean> {
+  // Save to local cache first
+  try {
+    localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(content));
+  } catch (e) {}
+
+  try {
+    // 1. Try upserting to 'app_store'
+    const { error: err1 } = await supabase
+      .from('app_store')
+      .upsert({ key, content, updated_at: new Date().toISOString() }, { onConflict: 'key' });
+
+    if (!err1) return true;
+
+    // 2. Try upserting to 'app_settings'
+    const { error: err2 } = await supabase
+      .from('app_settings')
+      .upsert({ id: key, value: JSON.stringify(content), updated_at: new Date().toISOString() }, { onConflict: 'id' });
+
+    if (!err2) return true;
+
+    console.warn(`Supabase save issue for key ${key}:`, err1?.message || err2?.message);
+  } catch (err) {
+    console.warn(`Supabase save error for key "${key}":`, err);
+  }
+
+  return false;
+}
+
