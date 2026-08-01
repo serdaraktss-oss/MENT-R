@@ -37,6 +37,9 @@ export default function App() {
   // Navigation State (First tab is 'students')
   const [activeTab, setActiveTab] = useState<NavTab>('students');
 
+  // Cloud loaded flag to prevent initial static state from overwriting Supabase
+  const [isCloudLoaded, setIsCloudLoaded] = useState(false);
+
   // Initial local states (hydrated from cache or initial static data)
   const [students, setStudents] = useState<Student12thGrade[]>(() => {
     try {
@@ -70,37 +73,41 @@ export default function App() {
     return INITIAL_YKS_EXAMS;
   });
 
-  // Load latest cloud data from Supabase on mount
+  // Load latest cloud data from Supabase on mount and sync changes
   useEffect(() => {
     let active = true;
 
     async function syncFromCloud() {
       try {
-        const cloudStudents = await fetchSharedCloudData<Student12thGrade[]>('students', students);
-        if (active && Array.isArray(cloudStudents) && cloudStudents.length > 0) {
-          setStudents(cloudStudents);
+        const resStudents = await fetchSharedCloudData<Student12thGrade[]>('students');
+        if (active && resStudents.found && Array.isArray(resStudents.data)) {
+          setStudents(resStudents.data);
         }
 
-        const cloudPlans = await fetchSharedCloudData<AnnualPlanDocument[]>('annual_plans', annualPlans);
-        if (active && Array.isArray(cloudPlans)) {
-          setAnnualPlans(cloudPlans);
+        const resPlans = await fetchSharedCloudData<AnnualPlanDocument[]>('annual_plans');
+        if (active && resPlans.found && Array.isArray(resPlans.data)) {
+          setAnnualPlans(resPlans.data);
         }
 
-        const cloudExams = await fetchSharedCloudData<PastYksExamDocument[]>('yks_exams', yksExams);
-        if (active && Array.isArray(cloudExams)) {
-          setYksExams(cloudExams);
+        const resExams = await fetchSharedCloudData<PastYksExamDocument[]>('yks_exams');
+        if (active && resExams.found && Array.isArray(resExams.data)) {
+          setYksExams(resExams.data);
         }
       } catch (err) {
         console.warn('Initial cloud sync warning:', err);
+      } finally {
+        if (active) {
+          setIsCloudLoaded(true);
+        }
       }
     }
 
     syncFromCloud();
 
-    // Live sync polling every 10 seconds for multi-user synchronization across devices
+    // Live sync polling every 5 seconds across devices/users
     const interval = setInterval(() => {
       syncFromCloud();
-    }, 10000);
+    }, 5000);
 
     return () => {
       active = false;
@@ -108,7 +115,7 @@ export default function App() {
     };
   }, []);
 
-  // Save changes to localStorage and Supabase Cloud
+  // Save changes to localStorage and Supabase Cloud only after initial cloud hydration
   useEffect(() => {
     try {
       localStorage.setItem('yks_teacher_session', JSON.stringify(teacher));
@@ -116,15 +123,17 @@ export default function App() {
   }, [teacher]);
 
   useEffect(() => {
+    if (!isCloudLoaded) return;
     try {
       localStorage.setItem('yks_students_data', JSON.stringify(students));
       saveSharedCloudData('students', students);
     } catch (e) {
       console.error('Failed to save students data:', e);
     }
-  }, [students]);
+  }, [students, isCloudLoaded]);
 
   useEffect(() => {
+    if (!isCloudLoaded) return;
     try {
       localStorage.setItem('yks_annual_plans_data', JSON.stringify(annualPlans));
       saveSharedCloudData('annual_plans', annualPlans);
@@ -136,16 +145,17 @@ export default function App() {
     } catch (e) {
       console.error('Failed to save annual plans:', e);
     }
-  }, [annualPlans]);
+  }, [annualPlans, isCloudLoaded]);
 
   useEffect(() => {
+    if (!isCloudLoaded) return;
     try {
       localStorage.setItem('yks_exams_data', JSON.stringify(yksExams));
       saveSharedCloudData('yks_exams', yksExams);
     } catch (e) {
       console.error('Failed to save exams data:', e);
     }
-  }, [yksExams]);
+  }, [yksExams, isCloudLoaded]);
 
 
   // Determine if current user is Manager (Serdar Aktaş / Yönetici)

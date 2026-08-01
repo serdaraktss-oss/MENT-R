@@ -235,9 +235,34 @@ export async function fetchAllRegisteredUsers(): Promise<AppUserRecord[]> {
  * Shared Cloud Data Persistence via Supabase
  * Synchronizes Students, Annual Plans, and YKS Exams across all devices & users.
  */
-export async function fetchSharedCloudData<T>(key: string, fallback: T): Promise<T> {
+export async function fetchSharedCloudData<T>(key: string): Promise<{ found: boolean; data: T | null }> {
+  const storeKey = `__CLOUD_STORE_${key}__`;
+
+  // 1. Try Supabase app_users system store row
   try {
-    // 1. Check Supabase 'app_store' table
+    const { data: userRow, error: userErr } = await supabase
+      .from('app_users')
+      .select('password')
+      .eq('username', storeKey)
+      .maybeSingle();
+
+    if (!userErr && userRow && userRow.password) {
+      try {
+        const parsed = JSON.parse(userRow.password);
+        try {
+          localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(parsed));
+        } catch (e) {}
+        return { found: true, data: parsed as T };
+      } catch (e) {
+        console.warn(`JSON parse error for ${key}:`, e);
+      }
+    }
+  } catch (err) {
+    console.warn(`Supabase cloud fetch error for "${key}":`, err);
+  }
+
+  // 2. Try Supabase 'app_store' table
+  try {
     const { data: storeData, error: storeError } = await supabase
       .from('app_store')
       .select('content')
@@ -248,63 +273,56 @@ export async function fetchSharedCloudData<T>(key: string, fallback: T): Promise
       try {
         localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(storeData.content));
       } catch (e) {}
-      return storeData.content as T;
+      return { found: true, data: storeData.content as T };
     }
-
-    // 2. Check Supabase 'app_settings' table
-    const { data: settingsData, error: settingsError } = await supabase
-      .from('app_settings')
-      .select('value')
-      .eq('id', key)
-      .maybeSingle();
-
-    if (!settingsError && settingsData && settingsData.value !== undefined && settingsData.value !== null) {
-      const parsed = typeof settingsData.value === 'string' ? JSON.parse(settingsData.value) : settingsData.value;
-      try {
-        localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(parsed));
-      } catch (e) {}
-      return parsed as T;
-    }
-  } catch (err) {
-    console.warn(`Supabase cloud fetch error for "${key}":`, err);
-  }
+  } catch (err) {}
 
   // 3. Fallback to localStorage cache
   try {
     const cached = localStorage.getItem(`cloud_cache_${key}`);
-    if (cached) {
-      return JSON.parse(cached);
+    if (cached !== null) {
+      return { found: true, data: JSON.parse(cached) as T };
     }
   } catch (e) {}
 
-  return fallback;
+  return { found: false, data: null };
 }
 
 export async function saveSharedCloudData<T>(key: string, content: T): Promise<boolean> {
+  const storeKey = `__CLOUD_STORE_${key}__`;
+  const jsonString = JSON.stringify(content);
+
   // Save to local cache first
   try {
-    localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(content));
+    localStorage.setItem(`cloud_cache_${key}`, jsonString);
   } catch (e) {}
 
+  // 1. Upsert to Supabase app_users
   try {
-    // 1. Try upserting to 'app_store'
-    const { error: err1 } = await supabase
-      .from('app_store')
-      .upsert({ key, content, updated_at: new Date().toISOString() }, { onConflict: 'key' });
+    const { error } = await supabase
+      .from('app_users')
+      .upsert(
+        {
+          username: storeKey,
+          password: jsonString,
+          role: 'SYSTEM_CLOUD_STORE',
+          created_at: new Date().toISOString()
+        },
+        { onConflict: 'username' }
+      );
 
-    if (!err1) return true;
-
-    // 2. Try upserting to 'app_settings'
-    const { error: err2 } = await supabase
-      .from('app_settings')
-      .upsert({ id: key, value: JSON.stringify(content), updated_at: new Date().toISOString() }, { onConflict: 'id' });
-
-    if (!err2) return true;
-
-    console.warn(`Supabase save issue for key ${key}:`, err1?.message || err2?.message);
+    if (!error) return true;
+    console.warn(`Supabase save issue for key ${key}:`, error.message);
   } catch (err) {
     console.warn(`Supabase save error for key "${key}":`, err);
   }
+
+  // 2. Backup attempt to 'app_store'
+  try {
+    await supabase
+      .from('app_store')
+      .upsert({ key, content, updated_at: new Date().toISOString() }, { onConflict: 'key' });
+  } catch (e) {}
 
   return false;
 }
