@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { NavTab, Student12thGrade, AnnualPlanDocument, PastYksExamDocument } from '../types';
 import { jsPDF } from 'jspdf';
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
+import { getSmartOfflineReply } from '../utils/aiFallback';
 import {
   X,
   Send,
@@ -260,8 +261,12 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Server status ${response.status}`);
+      }
+
       const data = await response.json();
-      const rawReply = data.reply || 'Anlaşıldı hocam, başka nasıl yardımcı olabilirim?';
+      const rawReply = data.reply || 'Anlaşıldı Serdar Hocam, başka nasıl yardımcı olabilirim?';
 
       const { cleanText, actionInfo, triggerPdf, triggerDocx } = processAction(rawReply);
 
@@ -277,17 +282,39 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
 
       setMessages((prev) => [...prev, assistantMsgObj]);
     } catch (e) {
-      console.error('Assistant Send Error', e);
-      // Fallback response
-      const { cleanText, actionInfo } = processAction(text.trim());
+      console.warn('Assistant API fallback triggered:', e);
+      const offlineResult = getSmartOfflineReply(text.trim(), contextData);
+      const { cleanText, actionInfo, triggerPdf, triggerDocx } = processAction(offlineResult.replyText);
+
+      if (offlineResult.targetTab) {
+        onSelectTab(offlineResult.targetTab);
+      }
+      if (offlineResult.targetStudentName) {
+        const found = students.find((s) =>
+          s.name.toLowerCase().includes(offlineResult.targetStudentName!.toLowerCase())
+        );
+        if (found) {
+          onSelectTab('students');
+          onSelectStudent(found);
+        }
+      }
+      if (offlineResult.triggerPdf || triggerPdf) {
+        generateSummaryPDF();
+      }
+      if (offlineResult.triggerDocx || triggerDocx) {
+        generateSummaryDOCX();
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           id: `msg-ai-${Date.now()}`,
           sender: 'assistant',
-          text: cleanText ? `Anlaşıldı hocam. ${cleanText}` : 'Tüm verileriniz hazır hocam, ne yapmamı istersiniz?',
+          text: cleanText || offlineResult.replyText,
           timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
-          actionExecuted: actionInfo || undefined,
+          actionExecuted: offlineResult.actionExecuted || actionInfo || undefined,
+          hasPdfDownload: offlineResult.triggerPdf || triggerPdf,
+          hasDocxDownload: offlineResult.triggerDocx || triggerDocx,
         },
       ]);
     } finally {
