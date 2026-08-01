@@ -134,116 +134,274 @@ export function generateKazanimlarForSubject(
  */
 export function parseOpticalDocument(
   fileName: string,
-  examType: 'TYT' | 'AYT'
+  examType: 'TYT' | 'AYT' | 'HEPSİ'
 ): ExamBreakdown {
   const isTYT = examType === 'TYT';
-  const title = fileName.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
+  const isHepsi = examType === 'HEPSİ';
+  const title = fileName.replace(/\.[^/.]+$/, "").replace(/_/g, " ") || '12. SINIF YKS 2 (GM)';
 
-  if (isTYT) {
-    const subjects: SubjectNetDetail[] = [
-      {
-        subjectName: 'Türkçe',
-        questionCount: 40,
-        correct: 33,
-        wrong: 5,
-        blank: 2,
-        net: 31.75,
-        accuracyRate: 82,
-        kazanimlar: generateKazanimlarForSubject('Türkçe', 33, 5, 2),
-      },
-      {
-        subjectName: 'Temel Matematik',
-        questionCount: 40,
-        correct: 31,
-        wrong: 4,
-        blank: 5,
-        net: 30.0,
-        accuracyRate: 78,
-        kazanimlar: generateKazanimlarForSubject('Temel Matematik', 31, 4, 5),
-      },
-      {
-        subjectName: 'Fen Bilimleri',
-        questionCount: 20,
-        correct: 16,
-        wrong: 3,
-        blank: 1,
-        net: 15.25,
-        accuracyRate: 80,
-        kazanimlar: generateKazanimlarForSubject('Fen Bilimleri', 16, 3, 1),
-      },
-      {
-        subjectName: 'Sosyal Bilimler',
-        questionCount: 20,
-        correct: 12,
-        wrong: 5,
-        blank: 3,
-        net: 10.75,
-        accuracyRate: 60,
-        kazanimlar: generateKazanimlarForSubject('Sosyal Bilimler', 12, 5, 3),
-      },
-    ];
+  const tytSubjects: SubjectNetDetail[] = [
+    {
+      subjectName: 'Türkçe TYT',
+      questionCount: 40,
+      correct: 35,
+      wrong: 5,
+      blank: 0,
+      net: 33.75,
+      accuracyRate: 88,
+      kazanimlar: [
+        { topicName: 'Cümlede Anlam İlişkileri', questionCount: 4, correctCount: 3, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Çeldiriciler dikkatli okunmalı, cümle anlamı tekrar edilmeli.' },
+        { topicName: 'İyi Cümlenin Nitelikleri', questionCount: 4, correctCount: 3, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Cümle yapısı ve anlatım nitelikleri gözden geçirilmeli.' },
+        { topicName: 'Paragraftan Ulaşılabilir / Değinilmiştir', questionCount: 20, correctCount: 18, wrongCount: 2, blankCount: 0, status: 'struggling', recommendation: 'Paragraf taktikleri ve ana düşünce soruları çalışılmalı.' },
+        { topicName: 'Sözcükte Anlam ve Deyimler', questionCount: 12, correctCount: 11, wrongCount: 1, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Matematik',
+      questionCount: 30,
+      correct: 27,
+      wrong: 2,
+      blank: 1,
+      net: 26.50,
+      accuracyRate: 90,
+      kazanimlar: [
+        { topicName: 'Obeb ve Okek', questionCount: 4, correctCount: 2, wrongCount: 2, blankCount: 0, status: 'struggling', recommendation: 'EBOB-EKOK problemleri tekrar edilmeli.' },
+        { topicName: 'Tamsayılarda İşlemler', questionCount: 8, correctCount: 7, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'İşlem hataları azaltılmalı ve temel kavramlar tekrar edilmeli.' },
+        { topicName: 'Doğal Sayılarda Dört İşlem', questionCount: 10, correctCount: 10, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' },
+        { topicName: 'Bölünebilme Kuralları', questionCount: 8, correctCount: 8, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Geometri',
+      questionCount: 10,
+      correct: 8,
+      wrong: 1,
+      blank: 1,
+      net: 7.75,
+      accuracyRate: 80,
+      kazanimlar: [
+        { topicName: 'Üçgende Eşlik ve Orta Taban', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Üçgende eşlik kuralları ve orta taban tekrar edilmeli.' },
+        { topicName: 'Dik Üçgen', questionCount: 3, correctCount: 2, wrongCount: 0, blankCount: 1, status: 'blank', recommendation: 'Pisagor ve hipotenüs bağıntıları tekrar edilmeli.' },
+        { topicName: 'Açılar ve Üçgende Açılar', questionCount: 4, correctCount: 4, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Fizik',
+      questionCount: 7,
+      correct: 6,
+      wrong: 1,
+      blank: 0,
+      net: 5.75,
+      accuracyRate: 86,
+      kazanimlar: [
+        { topicName: 'Fiziksel Niceliklerin Sınıflandırılması', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Vektörel-skaler büyüklükler ve türetilmiş birimler tekrar edilmeli.' },
+        { topicName: 'Isı ve Sıcaklık', questionCount: 4, correctCount: 4, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Kimya',
+      questionCount: 6,
+      correct: 5,
+      wrong: 1,
+      blank: 0,
+      net: 4.75,
+      accuracyRate: 83,
+      kazanimlar: [
+        { topicName: 'Atom Modelleri - Atomun Yapısı', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Atom modelleri ve nötron-proton ilişkileri tekrar edilmeli.' },
+        { topicName: 'Kimyasal Sembolik Dil', questionCount: 3, correctCount: 3, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Biyoloji',
+      questionCount: 6,
+      correct: 5,
+      wrong: 1,
+      blank: 0,
+      net: 4.75,
+      accuracyRate: 83,
+      kazanimlar: [
+        { topicName: 'Canlıların Yapısında Bulunan Temel Bileşikler', questionCount: 4, correctCount: 3, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Enzimler ve organik moleküller çalışılmalı.' },
+        { topicName: 'Canlıların Ortak Özellikleri', questionCount: 2, correctCount: 2, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Tarih',
+      questionCount: 5,
+      correct: 3,
+      wrong: 2,
+      blank: 0,
+      net: 2.50,
+      accuracyRate: 60,
+      kazanimlar: [
+        { topicName: 'İnsanlığın Hafızası Tarih', questionCount: 2, correctCount: 1, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Tarih bilimi kavramları ve kaynak türleri tekrar edilmeli.' },
+        { topicName: 'İlk Çağ\'da Yeryüzündeki Medeniyetler', questionCount: 2, correctCount: 1, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'İlk çağ medeniyetleri ve coğrafi özellikleri tekrar edilmeli.' },
+        { topicName: 'Zaman ve Takvim', questionCount: 1, correctCount: 1, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Coğrafya',
+      questionCount: 5,
+      correct: 4,
+      wrong: 1,
+      blank: 0,
+      net: 3.75,
+      accuracyRate: 80,
+      kazanimlar: [
+        { topicName: 'Dünya\'nın Şekli ve Hareketleri', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Dünya\'nın eksen eğikliği ve sonuçları tekrar edilmeli.' },
+        { topicName: 'Coğrafyanın Konusu ve Bölümleri', questionCount: 2, correctCount: 2, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Felsefe',
+      questionCount: 5,
+      correct: 5,
+      wrong: 0,
+      blank: 0,
+      net: 5.00,
+      accuracyRate: 100,
+      kazanimlar: [
+        { topicName: 'Felsefenin Alanı ve Soruları', questionCount: 5, correctCount: 5, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'TYT Din Kültürü',
+      questionCount: 5,
+      correct: 5,
+      wrong: 0,
+      blank: 0,
+      net: 5.00,
+      accuracyRate: 100,
+      kazanimlar: [
+        { topicName: 'İslam ve Bilim Kaynakları', questionCount: 5, correctCount: 5, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+  ];
 
-    const totalNet = Number((31.75 + 30.0 + 15.25 + 10.75).toFixed(2));
+  const aytSubjects: SubjectNetDetail[] = [
+    {
+      subjectName: 'AYT Matematik',
+      questionCount: 30,
+      correct: 27,
+      wrong: 2,
+      blank: 1,
+      net: 26.50,
+      accuracyRate: 90,
+      kazanimlar: [
+        { topicName: 'Fonksiyonlarda Öteleme ve Dönüşüm', questionCount: 5, correctCount: 4, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Öteleme kuralları ve fonksiyon grafikleri gözden geçirilmeli.' },
+        { topicName: 'Parçalı ve Mutlak Değer Fonksiyonları', questionCount: 5, correctCount: 3, wrongCount: 1, blankCount: 1, status: 'struggling', recommendation: 'Mutlak değer grafikleri ve tanım kümesi tekrar edilmeli.' },
+        { topicName: 'Bileşke Fonksiyonu', questionCount: 5, correctCount: 4, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Bileşke fonksiyon özellikleri tekrar edilmeli.' },
+        { topicName: 'Faktöriyel ve Tam Sayılarda İşlemler', questionCount: 15, correctCount: 15, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Geometri',
+      questionCount: 10,
+      correct: 6,
+      wrong: 0,
+      blank: 4,
+      net: 6.00,
+      accuracyRate: 60,
+      kazanimlar: [
+        { topicName: 'Üçgende Eşlik ve Benzerlik', questionCount: 5, correctCount: 3, wrongCount: 0, blankCount: 2, status: 'blank', recommendation: '2 soru boş bırakıldı.' },
+        { topicName: 'Dik Üçgen', questionCount: 5, correctCount: 3, wrongCount: 0, blankCount: 2, status: 'blank', recommendation: '2 soru boş bırakıldı.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Fizik',
+      questionCount: 14,
+      correct: 9,
+      wrong: 5,
+      blank: 0,
+      net: 7.75,
+      accuracyRate: 64,
+      kazanimlar: [
+        { topicName: 'Vektör-Kuvvet (Doğadaki Temel Kuvvetler)', questionCount: 4, correctCount: 3, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Vektör bileşenleri ve bileşke kuvvet tekrar edilmeli.' },
+        { topicName: 'Maddenin Halleri ve Gaz Basıncı', questionCount: 4, correctCount: 2, wrongCount: 2, blankCount: 0, status: 'struggling', recommendation: 'Basınç denklemleri ve gaz yasaları tekrar edilmeli.' },
+        { topicName: 'Arşimet Yasası', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Kaldırma kuvveti ve denge prensipleri gözden geçirilmeli.' },
+        { topicName: 'Genleşme', questionCount: 3, correctCount: 2, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Termal genleşme katsayıları tekrar edilmeli.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Kimya',
+      questionCount: 13,
+      correct: 12,
+      wrong: 1,
+      blank: 0,
+      net: 11.75,
+      accuracyRate: 92,
+      kazanimlar: [
+        { topicName: 'Periyodik Sistem ve Elektron Dizilimi', questionCount: 7, correctCount: 6, wrongCount: 1, blankCount: 0, status: 'struggling', recommendation: 'Elektron dizilimi ve kuantum sayıları tekrar edilmeli.' },
+        { topicName: 'Atomun Kuantum Modeli', questionCount: 6, correctCount: 6, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Biyoloji',
+      questionCount: 13,
+      correct: 9,
+      wrong: 4,
+      blank: 0,
+      net: 8.00,
+      accuracyRate: 69,
+      kazanimlar: [
+        { topicName: 'Canlıların Yapısında Bulunan Temel Bileşikler', questionCount: 7, correctCount: 3, wrongCount: 4, blankCount: 0, status: 'struggling', recommendation: 'Enzim ve protein yapıları tekrar çalışılmalı.' },
+        { topicName: 'Biyoloji ve Canlıların Ortak Özellikleri', questionCount: 6, correctCount: 6, wrongCount: 0, blankCount: 0, status: 'mastered', recommendation: 'Tam başarı sağlandı.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Tarih',
+      questionCount: 10,
+      correct: 0,
+      wrong: 0,
+      blank: 10,
+      net: 0.00,
+      accuracyRate: 0,
+      kazanimlar: [
+        { topicName: 'İnsanlığın Hafızası Tarih', questionCount: 5, correctCount: 0, wrongCount: 0, blankCount: 5, status: 'blank', recommendation: 'Öğrenci AYT Tarih bölümünden soru işaretlememiştir.' },
+        { topicName: 'İlk Çağ\'da Yeryüzündeki Medeniyetler', questionCount: 5, correctCount: 0, wrongCount: 0, blankCount: 5, status: 'blank', recommendation: 'Öğrenci AYT Tarih bölümünden soru işaretlememiştir.' }
+      ],
+    },
+    {
+      subjectName: 'AYT Coğrafya',
+      questionCount: 6,
+      correct: 0,
+      wrong: 0,
+      blank: 6,
+      net: 0.00,
+      accuracyRate: 0,
+      kazanimlar: [
+        { topicName: 'Dünya\'nın Şekli ve Hareketleri', questionCount: 3, correctCount: 0, wrongCount: 0, blankCount: 3, status: 'blank', recommendation: 'Öğrenci AYT Coğrafya bölümünden soru işaretlememiştir.' },
+        { topicName: 'Coğrafyanın Konusu ve Bölümleri', questionCount: 3, correctCount: 0, wrongCount: 0, blankCount: 3, status: 'blank', recommendation: 'Öğrenci AYT Coğrafya bölümünden soru işaretlememiştir.' }
+      ],
+    },
+  ];
 
+  if (isHepsi) {
+    const subjects = [...tytSubjects, ...aytSubjects];
+    const totalNet = Number(subjects.reduce((sum, s) => sum + s.net, 0).toFixed(2));
     return {
-      examName: title || 'Belgeden Aktarılan Optik TYT Denemesi',
-      examDate: 'Ağustos 2026',
+      examName: title.includes('YKS') ? title : `${title} (TYT + AYT Birleşik)`,
+      examDate: '19.09.2025',
       totalNet,
-      rankInSchool: 2,
+      rankInSchool: 1,
       subjects,
     };
-  } else {
-    const subjects: SubjectNetDetail[] = [
-      {
-        subjectName: 'AYT Matematik',
-        questionCount: 40,
-        correct: 30,
-        wrong: 5,
-        blank: 5,
-        net: 28.75,
-        accuracyRate: 75,
-        kazanimlar: generateKazanimlarForSubject('AYT Matematik', 30, 5, 5),
-      },
-      {
-        subjectName: 'AYT Fizik',
-        questionCount: 14,
-        correct: 11,
-        wrong: 2,
-        blank: 1,
-        net: 10.5,
-        accuracyRate: 78,
-        kazanimlar: generateKazanimlarForSubject('AYT Fizik', 11, 2, 1),
-      },
-      {
-        subjectName: 'AYT Kimya',
-        questionCount: 13,
-        correct: 10,
-        wrong: 2,
-        blank: 1,
-        net: 9.5,
-        accuracyRate: 77,
-        kazanimlar: generateKazanimlarForSubject('AYT Kimya', 10, 2, 1),
-      },
-      {
-        subjectName: 'AYT Biyoloji',
-        questionCount: 13,
-        correct: 11,
-        wrong: 1,
-        blank: 1,
-        net: 10.75,
-        accuracyRate: 84,
-        kazanimlar: generateKazanimlarForSubject('AYT Biyoloji', 11, 1, 1),
-      },
-    ];
-
-    const totalNet = Number((28.75 + 10.5 + 9.5 + 10.75).toFixed(2));
-
+  } else if (isTYT) {
+    const totalNet = Number((33.75 + 26.50 + 7.75 + 5.75 + 4.75 + 4.75 + 2.50 + 3.75).toFixed(2));
     return {
-      examName: title || 'Belgeden Aktarılan Optik AYT Denemesi',
-      examDate: 'Ağustos 2026',
+      examName: title.includes('TYT') ? title : `${title} (TYT)`,
+      examDate: '19.09.2025',
       totalNet,
-      rankInSchool: 3,
-      subjects,
+      rankInSchool: 1,
+      subjects: tytSubjects,
+    };
+  } else {
+    const totalNet = Number((26.50 + 6.00 + 7.75 + 11.75 + 8.00).toFixed(2));
+    return {
+      examName: title.includes('AYT') ? title : `${title} (AYT)`,
+      examDate: '19.09.2025',
+      totalNet,
+      rankInSchool: 1,
+      subjects: aytSubjects,
     };
   }
 }

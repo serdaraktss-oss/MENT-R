@@ -55,90 +55,66 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
   const [inputMsg, setInputMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // SpongeBob SVG Graphic Vector Component
-  const SpongeBobSvg = () => (
+  // Yellow Panda SVG Graphic Vector Component
+  const YellowPandaSvg = () => (
     <svg viewBox="0 0 100 100" className="w-full h-full object-cover">
       <defs>
-        <linearGradient id="sbYellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id="pandaYellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#fef08a" />
-          <stop offset="100%" stopColor="#eab308" />
+          <stop offset="50%" stopColor="#fbbf24" />
+          <stop offset="100%" stopColor="#d97706" />
         </linearGradient>
-        <linearGradient id="sbEyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#0284c7" />
+        <linearGradient id="pandaPatchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#334155" />
+          <stop offset="100%" stopColor="#0f172a" />
         </linearGradient>
       </defs>
-      {/* Background Circle */}
-      <circle cx="50" cy="50" r="50" fill="#0f172a" />
 
-      {/* Main Sponge Body */}
-      <rect x="18" y="10" width="64" height="60" rx="8" fill="url(#sbYellowGrad)" stroke="#ca8a04" strokeWidth="2" />
+      {/* Background Circle Frame */}
+      <circle cx="50" cy="50" r="50" fill="#090d16" />
 
-      {/* Sponge Pores */}
-      <circle cx="25" cy="18" r="4" fill="#ca8a04" opacity="0.35" />
-      <circle cx="75" cy="20" r="4.5" fill="#ca8a04" opacity="0.35" />
-      <circle cx="22" cy="55" r="3.5" fill="#ca8a04" opacity="0.35" />
-      <circle cx="76" cy="58" r="4" fill="#ca8a04" opacity="0.35" />
-      <circle cx="32" cy="14" r="2.5" fill="#ca8a04" opacity="0.3" />
+      {/* Panda Ears */}
+      <circle cx="24" cy="22" r="14" fill="#0f172a" stroke="#fbbf24" strokeWidth="2.5" />
+      <circle cx="24" cy="22" r="8" fill="#d97706" opacity="0.8" />
 
-      {/* Large Round Eyes */}
-      <circle cx="36" cy="34" r="14" fill="#ffffff" stroke="#1e293b" strokeWidth="1.5" />
-      <circle cx="64" cy="34" r="14" fill="#ffffff" stroke="#1e293b" strokeWidth="1.5" />
+      <circle cx="76" cy="22" r="14" fill="#0f172a" stroke="#fbbf24" strokeWidth="2.5" />
+      <circle cx="76" cy="22" r="8" fill="#d97706" opacity="0.8" />
 
-      {/* Blue Irises */}
-      <circle cx="38" cy="34" r="6.5" fill="url(#sbEyeGrad)" />
-      <circle cx="62" cy="34" r="6.5" fill="url(#sbEyeGrad)" />
+      {/* Panda Head (Golden Yellow Fur) */}
+      <ellipse cx="50" cy="54" rx="38" ry="34" fill="url(#pandaYellowGrad)" stroke="#b45309" strokeWidth="2" />
+
+      {/* Inner Muzzle / Snout Area */}
+      <ellipse cx="50" cy="62" rx="16" ry="12" fill="#fffbeb" opacity="0.9" />
+
+      {/* Dark Eye Patches */}
+      <ellipse cx="33" cy="46" rx="11" ry="13" transform="rotate(-12 33 46)" fill="url(#pandaPatchGrad)" />
+      <ellipse cx="67" cy="46" rx="11" ry="13" transform="rotate(12 67 46)" fill="url(#pandaPatchGrad)" />
+
+      {/* White Eyes */}
+      <circle cx="34" cy="45" r="5" fill="#ffffff" />
+      <circle cx="66" cy="45" r="5" fill="#ffffff" />
 
       {/* Pupils */}
-      <circle cx="38" cy="34" r="3" fill="#020617" />
-      <circle cx="62" cy="34" r="3" fill="#020617" />
-      <circle cx="39.5" cy="32.5" r="1" fill="#ffffff" />
-      <circle cx="63.5" cy="32.5" r="1" fill="#ffffff" />
+      <circle cx="35" cy="45" r="2.8" fill="#020617" />
+      <circle cx="65" cy="45" r="2.8" fill="#020617" />
 
-      {/* Eyelashes */}
-      <line x1="30" y1="18" x2="28" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="36" y1="16" x2="36" y2="10" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="42" y1="18" x2="44" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      {/* Eye Reflection Dots */}
+      <circle cx="36" cy="43.8" r="1" fill="#ffffff" />
+      <circle cx="66" cy="43.8" r="1" fill="#ffffff" />
 
-      <line x1="58" y1="18" x2="56" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="64" y1="16" x2="64" y2="10" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="70" y1="18" x2="72" y2="12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
+      {/* Panda Nose */}
+      <path d="M 45 56 C 45 53, 55 53, 55 56 C 55 60, 45 60, 45 56 Z" fill="#0f172a" />
 
-      {/* Nose */}
-      <path d="M 50 36 C 54 36, 55 46, 50 46 C 47 46, 46 41, 50 36 Z" fill="url(#sbYellowGrad)" stroke="#ca8a04" strokeWidth="1.8" />
+      {/* Cute Mouth */}
+      <path d="M 50 59 L 50 64" stroke="#0f172a" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M 42 63 Q 50 71 58 63" fill="none" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
 
-      {/* Freckle Cheeks */}
-      <path d="M 22 42 Q 16 42 22 48" fill="none" stroke="#ef4444" strokeWidth="1.5" />
-      <circle cx="22" cy="44" r="0.8" fill="#ef4444" />
-      <circle cx="25" cy="43" r="0.8" fill="#ef4444" />
-      <circle cx="24" cy="46" r="0.8" fill="#ef4444" />
+      {/* Soft Rosy Blush Cheeks */}
+      <ellipse cx="22" cy="58" rx="5" ry="3.5" fill="#f43f5e" opacity="0.5" />
+      <ellipse cx="78" cy="58" rx="5" ry="3.5" fill="#f43f5e" opacity="0.5" />
 
-      <path d="M 78 42 Q 84 42 78 48" fill="none" stroke="#ef4444" strokeWidth="1.5" />
-      <circle cx="78" cy="44" r="0.8" fill="#ef4444" />
-      <circle cx="75" cy="43" r="0.8" fill="#ef4444" />
-      <circle cx="76" cy="46" r="0.8" fill="#ef4444" />
-
-      {/* Wide Smile */}
-      <path d="M 28 50 Q 50 68 72 50" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" />
-
-      {/* Two Buck Teeth */}
-      <rect x="42" y="58" width="6" height="7" rx="0.5" fill="#ffffff" stroke="#0f172a" strokeWidth="1.2" />
-      <rect x="52" y="58" width="6" height="7" rx="0.5" fill="#ffffff" stroke="#0f172a" strokeWidth="1.2" />
-
-      {/* White Shirt Collar */}
-      <rect x="18" y="70" width="64" height="12" fill="#ffffff" />
-      <polygon points="34,70 50,82 30,70" fill="#ffffff" />
-      <polygon points="66,70 50,82 70,70" fill="#ffffff" />
-
-      {/* Red Tie */}
-      <polygon points="46,70 54,70 56,86 50,92 44,86" fill="#dc2626" stroke="#991b1b" strokeWidth="1" />
-
-      {/* Brown Square Pants */}
-      <rect x="18" y="82" width="64" height="18" fill="#854d0e" />
-      <rect x="25" y="85" width="8" height="3" fill="#0f172a" />
-      <rect x="41" y="85" width="8" height="3" fill="#0f172a" />
-      <rect x="51" y="85" width="8" height="3" fill="#0f172a" />
-      <rect x="67" y="85" width="8" height="3" fill="#0f172a" />
+      {/* Small Bamboo Leaf Accent on Head */}
+      <path d="M 46 22 Q 52 14 62 18 Q 54 26 46 22 Z" fill="#22c55e" stroke="#15803d" strokeWidth="1" />
     </svg>
   );
 
@@ -147,7 +123,7 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
     {
       id: 'msg-init-1',
       sender: 'assistant',
-      text: 'Merhaba hocam! Ben SüngerBob 🧽✨ Size ve öğrencilerimize nasıl yardımcı olabilirim?',
+      text: 'Merhaba hocam nasıl yardımcı olabilirim',
       timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -463,20 +439,20 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
         <button
           onClick={() => setIsOpen(true)}
           className="group relative flex items-center gap-3 bg-gradient-to-r from-slate-900 via-amber-950/80 to-slate-900 border-2 border-amber-500/60 hover:border-amber-400 text-white rounded-full p-2.5 pr-5 shadow-2xl shadow-amber-950/80 transition-all duration-300 hover:scale-105 cursor-pointer active:scale-95"
-          title="SüngerBob Akıllı Yapay Zeka Asistanı"
+          title="Mentör Yapay Zeka Asistanı"
         >
-          {/* SpongeBob Avatar Graphic Frame */}
+          {/* Yellow Panda Avatar Graphic Frame */}
           <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-amber-400 bg-amber-500/20 shrink-0 shadow-inner flex items-center justify-center">
-            <SpongeBobSvg />
+            <YellowPandaSvg />
             {/* Glowing online dot */}
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-slate-900 rounded-full animate-pulse" />
           </div>
 
           <div className="flex flex-col text-left">
             <span className="text-xs font-bold text-amber-200 group-hover:text-amber-100 transition flex items-center gap-1">
-              SüngerBob Asistan <Sparkles className="w-3 h-3 text-amber-300 animate-bounce" />
+              Mentör Asistan <Sparkles className="w-3 h-3 text-amber-300 animate-bounce" />
             </span>
-            <span className="text-[10px] text-amber-300/80 font-medium">Hızlı & Zeki Sistem Rehbari</span>
+            <span className="text-[10px] text-amber-300/80 font-medium">Kişisel Konuşma Asistanı</span>
           </div>
         </button>
       )}
@@ -495,21 +471,21 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
           {/* --- CHAT HEADER --- */}
           <div className="bg-gradient-to-r from-slate-950 via-amber-950/90 to-slate-950 border-b border-amber-500/30 p-3.5 px-4 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
-              {/* SpongeBob Avatar Box */}
+              {/* Yellow Panda Avatar Box */}
               <div className="relative w-10 h-10 rounded-full border-2 border-amber-400 bg-amber-950/50 overflow-hidden shrink-0 shadow-lg">
-                <SpongeBobSvg />
+                <YellowPandaSvg />
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border border-slate-900 rounded-full" />
               </div>
 
               <div>
                 <h3 className="text-xs font-black text-amber-100 flex items-center gap-1.5">
-                  SüngerBob AI Asistanı 🧽
+                  Mentör 🐼
                   <span className="px-1.5 py-0.2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[9px] rounded-full font-bold">
-                    HIZLI & CANLI
+                    CANLI YAPAY ZEKA
                   </span>
                 </h3>
                 <p className="text-[10px] text-amber-300/80 font-medium truncate max-w-[200px]">
-                  {teacherName} Hocam • SüngerBob Göreve Hazır!
+                  {teacherName} Hocam • Mentör Çevrimiçi
                 </p>
               </div>
             </div>
@@ -596,7 +572,7 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
             {isLoading && (
               <div className="flex items-center gap-2 text-indigo-300 bg-indigo-950/40 border border-indigo-500/30 p-2.5 rounded-2xl max-w-[220px]">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-indigo-400" />
-                <span className="text-[11px] font-medium">Asistan yanıt hazırlıyor...</span>
+                <span className="text-[11px] font-medium">Mentör yazıyor...</span>
               </div>
             )}
 
@@ -608,10 +584,10 @@ export const AiAssistantWidget: React.FC<AiAssistantWidgetProps> = ({
             <span className="text-[10px] font-bold text-slate-500 shrink-0">Hızlı Komutlar:</span>
 
             <button
-              onClick={() => handleSendMessage('Nasılsın SüngerBob?')}
+              onClick={() => handleSendMessage('Nasılsın Mentör?')}
               className="px-2.5 py-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-[10px] font-bold shrink-0 transition flex items-center gap-1 cursor-pointer"
             >
-              <span>🧽 Nasılsın?</span>
+              <span>🐼 Nasılsın?</span>
             </button>
 
             <button

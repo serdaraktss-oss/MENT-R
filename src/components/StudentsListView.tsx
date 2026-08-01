@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
 import { Student12thGrade } from '../types';
-import { Search, Filter, TrendingUp, TrendingDown, ArrowRight, UserPlus, X, CheckCircle2 } from 'lucide-react';
+import { Search, Filter, TrendingUp, TrendingDown, ArrowRight, UserPlus, X, CheckCircle2, Trash2 } from 'lucide-react';
 
 interface StudentsListViewProps {
   students: Student12thGrade[];
   onSelectStudent: (student: Student12thGrade) => void;
   onAddStudent?: (newStudent: Student12thGrade) => void;
+  onDeleteStudent?: (id: string) => void;
 }
 
 export const StudentsListView: React.FC<StudentsListViewProps> = ({
   students,
   onSelectStudent,
   onAddStudent,
+  onDeleteStudent,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedClass, setSelectedClass] = useState<string>('ALL');
+  const [selectedClass, setSelectedClass] = useState<string>('12 MFA');
 
   // Add Student Modal State
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [newName, setNewName] = useState('');
-  const [newStudentNo, setNewStudentNo] = useState('');
-  const [newClassName, setNewClassName] = useState<'12-A Fen Bilimleri' | '12-B Sayısal' | '12-C Eşit Ağırlık' | '12-D Dil'>('12-A Fen Bilimleri');
+  const [newClassName, setNewClassName] = useState<'12 MFA' | '12 TMA' | '12 TMB'>('12 MFA');
   const [newBranch, setNewBranch] = useState<'Sayısal' | 'Eşit Ağırlık' | 'Sözel' | 'Dil'>('Sayısal');
-  const [newInitialTyt, setNewInitialTyt] = useState('75.0');
-  const [newInitialAyt, setNewInitialAyt] = useState('50.0');
-  const [newMentorNote, setNewMentorNote] = useState('YENİ ÖĞRENCİ - Mentör takibi başlatıldı.');
+
+  // Delete Confirmation State
+  const [studentToDelete, setStudentToDelete] = useState<Student12thGrade | null>(null);
 
   const filteredStudents = students.filter((student) => {
     const matchesSearch =
       student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      student.studentNo.includes(searchQuery) ||
+      (student.studentNo && student.studentNo.includes(searchQuery)) ||
       student.branch.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesClass = selectedClass === 'ALL' || student.className === selectedClass;
+    const matchesClass = student.className === selectedClass;
 
     return matchesSearch && matchesClass;
   });
@@ -40,76 +41,39 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
   // Handle adding new student
   const handleCreateStudentSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newName.trim() || !newStudentNo.trim()) {
-      alert('Lütfen öğrenci isim-soyisim ve okul numarasını giriniz.');
+    if (!newName.trim()) {
+      alert('Lütfen öğrenci ad-soyadamını giriniz.');
       return;
     }
 
-    const tytNetVal = parseFloat(newInitialTyt) || 70.0;
-    const aytNetVal = parseFloat(newInitialAyt) || 45.0;
+    const generatedNo = Math.floor(100 + Math.random() * 900).toString();
 
     const newStudentObj: Student12thGrade = {
       id: `s-${Date.now()}`,
-      name: newName,
-      studentNo: newStudentNo,
+      name: newName.trim(),
+      studentNo: generatedNo,
       className: newClassName,
       branch: newBranch,
       avatarUrl: `https://images.unsplash.com/photo-${1534528741775 + Math.floor(Math.random() * 1000)}?w=200&auto=format&fit=crop&q=80`,
-      mentorNote: newMentorNote,
+      mentorNote: 'YENİ ÖĞRENCİ - Mentör takibi başlatıldı.',
       latestTyt: {
-        examName: 'Giriş / İlk Deneme TYT-1',
-        examDate: 'Ağustos 2026',
-        totalNet: tytNetVal,
-        rankInSchool: 8,
-        subjects: [
-          { subjectName: 'Türkçe', questionCount: 40, correct: 28, wrong: 6, blank: 6, net: Math.round(tytNetVal * 0.38), accuracyRate: 70 },
-          { subjectName: 'Temel Matematik', questionCount: 40, correct: 25, wrong: 5, blank: 10, net: Math.round(tytNetVal * 0.35), accuracyRate: 62 },
-          { subjectName: 'Fen Bilimleri', questionCount: 20, correct: 13, wrong: 3, blank: 4, net: Math.round(tytNetVal * 0.17), accuracyRate: 65 },
-          { subjectName: 'Sosyal Bilimler', questionCount: 20, correct: 11, wrong: 4, blank: 5, net: Math.round(tytNetVal * 0.10), accuracyRate: 55 },
-        ],
+        examName: 'Henüz Deneme Yüklenmedi',
+        examDate: '-',
+        totalNet: 0,
+        rankInSchool: 0,
+        subjects: [],
       },
       latestAyt: {
-        examName: 'Giriş / İlk Deneme AYT-1',
-        examDate: 'Ağustos 2026',
-        totalNet: aytNetVal,
-        rankInSchool: 10,
-        subjects: [
-          { subjectName: 'AYT Matematik', questionCount: 40, correct: 22, wrong: 6, blank: 12, net: Math.round(aytNetVal * 0.42), accuracyRate: 55 },
-          { subjectName: 'AYT Fizik', questionCount: 14, correct: 9, wrong: 3, blank: 2, net: Math.round(aytNetVal * 0.20), accuracyRate: 64 },
-          { subjectName: 'AYT Kimya', questionCount: 13, correct: 8, wrong: 3, blank: 2, net: Math.round(aytNetVal * 0.19), accuracyRate: 61 },
-          { subjectName: 'AYT Biyoloji', questionCount: 13, correct: 8, wrong: 2, blank: 3, net: Math.round(aytNetVal * 0.19), accuracyRate: 61 },
-        ],
+        examName: 'Henüz Deneme Yüklenmedi',
+        examDate: '-',
+        totalNet: 0,
+        rankInSchool: 0,
+        subjects: [],
       },
-      history: [
-        { examTitle: 'Başlangıç Denemesi', date: 'Temmuz', tytNet: Math.max(20, tytNetVal - 6), aytNet: Math.max(15, aytNetVal - 5) },
-        { examTitle: 'Son Deneme (Mevcut)', date: 'Ağustos', tytNet: tytNetVal, aytNet: aytNetVal },
-      ],
-      improvingKazanimlar: [
-        { id: `ik-${Date.now()}-1`, subject: 'Türkçe', topicName: 'Paragrafta Anlam Bütünlüğü', changeRate: '+12% İlerleme', status: 'improving', detailNote: 'Soru çözümü devam ediyor.' },
-      ],
-      decliningKazanimlar: [
-        { id: `dk-${Date.now()}-1`, subject: 'Matematik', topicName: 'Trigonometri I', changeRate: '-8% Düşüş', status: 'declining', detailNote: 'Özel çalışma programı eklendi.' },
-      ],
-      weeklyProgram: [
-        {
-          dayName: 'Pazartesi',
-          tasks: [
-            { id: 'wt1', timeSlot: '17:00 - 18:30', subject: 'Matematik', topic: 'Trigonometri & Denklem', focusType: 'Eksik Konu (Ağırlıklı Odak)', questionTarget: 30, detail: '30 Soru Çözümü' },
-            { id: 'wt2', timeSlot: '19:00 - 20:15', subject: 'Türkçe', topic: 'Paragraf Hız Testi', focusType: 'Genel Tekrar', questionTarget: 25, detail: '25 Soru Çözümü' },
-          ],
-        },
-        {
-          dayName: 'Salı',
-          tasks: [
-            { id: 'wt3', timeSlot: '17:00 - 18:30', subject: 'Fizik', topic: 'Vektörler & Dinamik', focusType: 'Genel Tekrar', questionTarget: 20, detail: '20 Soru Çözümü' },
-          ],
-        },
-        { dayName: 'Çarşamba', tasks: [] },
-        { dayName: 'Perşembe', tasks: [] },
-        { dayName: 'Cuma', tasks: [] },
-        { dayName: 'Cumartesi', tasks: [] },
-        { dayName: 'Pazar', tasks: [] },
-      ],
+      history: [],
+      improvingKazanimlar: [],
+      decliningKazanimlar: [],
+      weeklyProgram: [],
     };
 
     if (onAddStudent) {
@@ -117,7 +81,6 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
     }
     setIsAddModalOpen(false);
     setNewName('');
-    setNewStudentNo('');
   };
 
   return (
@@ -160,17 +123,17 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
 
         <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
           <Filter className="w-4 h-4 text-slate-400 shrink-0 hidden sm:block" />
-          {['ALL', '12-A Fen Bilimleri', '12-B Sayısal', '12-C Eşit Ağırlık', '12-D Dil'].map((cls) => (
+          {['12 MFA', '12 TMA', '12 TMB'].map((cls) => (
             <button
               key={cls}
               onClick={() => setSelectedClass(cls)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
                 selectedClass === cls
                   ? 'bg-indigo-600 text-white shadow-sm'
                   : 'bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700/60'
               }`}
             >
-              {cls === 'ALL' ? 'Tüm 12. Sınıflar' : cls}
+              {cls}
             </button>
           ))}
         </div>
@@ -224,18 +187,37 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
                 <div className="flex items-center gap-4">
                   <div className="bg-slate-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2 text-center min-w-[90px]">
                     <span className="text-[10px] text-slate-400 block font-semibold uppercase">Son TYT Net</span>
-                    <span className="text-base font-black text-emerald-400">{student.latestTyt.totalNet}</span>
+                    <span className="text-base font-black text-emerald-400">
+                      {student.latestTyt && student.latestTyt.subjects?.length > 0 ? student.latestTyt.totalNet : '—'}
+                    </span>
                   </div>
 
                   <div className="bg-slate-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2 text-center min-w-[90px]">
                     <span className="text-[10px] text-slate-400 block font-semibold uppercase">Son AYT Net</span>
-                    <span className="text-base font-black text-indigo-400">{student.latestAyt.totalNet}</span>
+                    <span className="text-base font-black text-indigo-400">
+                      {student.latestAyt && student.latestAyt.subjects?.length > 0 ? student.latestAyt.totalNet : '—'}
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1 text-sm font-bold text-indigo-400 group-hover:text-white bg-indigo-500/10 group-hover:bg-indigo-600 border border-indigo-500/30 group-hover:border-indigo-600 px-4 py-2.5 rounded-xl transition">
-                  <span>İncele / Düzenle</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 text-sm font-bold text-indigo-400 group-hover:text-white bg-indigo-500/10 group-hover:bg-indigo-600 border border-indigo-500/30 group-hover:border-indigo-600 px-4 py-2.5 rounded-xl transition">
+                    <span>İncele / Düzenle</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  {onDeleteStudent && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setStudentToDelete(student);
+                      }}
+                      title="Öğrenciyi Sil"
+                      className="p-2.5 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 border border-slate-700/60 hover:border-rose-500/30 rounded-xl transition cursor-pointer"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -275,21 +257,7 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
                 />
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Okul Numarası
-                  </label>
-                  <input
-                    type="text"
-                    value={newStudentNo}
-                    onChange={(e) => setNewStudentNo(e.target.value)}
-                    placeholder="Örn: 512"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs focus:ring-2 focus:ring-indigo-500"
-                    required
-                  />
-                </div>
-
+              <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
                     Sınıf / Şube
@@ -297,23 +265,22 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
                   <select
                     value={newClassName}
                     onChange={(e) => setNewClassName(e.target.value as any)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-2 py-2 text-white text-xs focus:ring-2 focus:ring-indigo-500"
+                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-xs font-medium focus:ring-2 focus:ring-indigo-500"
                   >
-                    <option value="12-A Fen Bilimleri">12-A Fen Bilimleri</option>
-                    <option value="12-B Sayısal">12-B Sayısal</option>
-                    <option value="12-C Eşit Ağırlık">12-C Eşit Ağırlık</option>
-                    <option value="12-D Dil">12-D Dil</option>
+                    <option value="12 MFA">12 MFA</option>
+                    <option value="12 TMA">12 TMA</option>
+                    <option value="12 TMB">12 TMB</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Branş / Alan
+                    Alan / Branş
                   </label>
                   <select
                     value={newBranch}
                     onChange={(e) => setNewBranch(e.target.value as any)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-2 py-2 text-white text-xs focus:ring-2 focus:ring-indigo-500"
+                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-xs font-medium focus:ring-2 focus:ring-indigo-500"
                   >
                     <option value="Sayısal">Sayısal</option>
                     <option value="Eşit Ağırlık">Eşit Ağırlık</option>
@@ -321,46 +288,6 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
                     <option value="Dil">Dil</option>
                   </select>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Giriş TYT Net
-                  </label>
-                  <input
-                    type="number"
-                    step="0.25"
-                    value={newInitialTyt}
-                    onChange={(e) => setNewInitialTyt(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs font-bold"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Giriş AYT Net
-                  </label>
-                  <input
-                    type="number"
-                    step="0.25"
-                    value={newInitialAyt}
-                    onChange={(e) => setNewInitialAyt(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white text-xs font-bold"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  Mentör Notu
-                </label>
-                <textarea
-                  rows={2}
-                  value={newMentorNote}
-                  onChange={(e) => setNewMentorNote(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white text-xs"
-                />
               </div>
 
               <div className="flex justify-end gap-3 pt-3 border-t border-slate-700">
@@ -379,6 +306,52 @@ export const StudentsListView: React.FC<StudentsListViewProps> = ({
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {/* MODAL: ÖĞRENCİ SİL ONAYI */}
+      {studentToDelete && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-800 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Trash2 className="w-5 h-5 text-rose-500" />
+                Öğrenciyi Sil
+              </h3>
+              <button
+                type="button"
+                onClick={() => setStudentToDelete(null)}
+                className="text-slate-400 hover:text-white p-1"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <p className="text-sm text-slate-300">
+              <strong className="text-white">{studentToDelete.name}</strong> isimli öğrenciyi sistemden silmek istediğinize emin misiniz? Bu işlem geri alınamaz.
+            </p>
+
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-700/60">
+              <button
+                type="button"
+                onClick={() => setStudentToDelete(null)}
+                className="px-4 py-2 text-xs font-semibold text-slate-400 hover:text-white bg-slate-700/50 hover:bg-slate-700 rounded-xl transition cursor-pointer"
+              >
+                Vazgeç
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (onDeleteStudent) {
+                    onDeleteStudent(studentToDelete.id);
+                  }
+                  setStudentToDelete(null);
+                }}
+                className="px-4 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 shadow-lg shadow-rose-600/30 rounded-xl transition cursor-pointer"
+              >
+                Evet, Sil
+              </button>
+            </div>
           </div>
         </div>
       )}

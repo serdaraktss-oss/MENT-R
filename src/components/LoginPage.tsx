@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Lock, User, GraduationCap, AlertCircle, ArrowRight, CheckCircle2, UserPlus, LogIn } from 'lucide-react';
 import { loginAppUser, registerAppUser } from '../lib/supabase';
+import { recordUserLogin } from '../lib/userLogTracker';
 
 interface LoginPageProps {
   onLoginSuccess: (teacherName: string, role?: string) => void;
@@ -40,6 +41,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         // --- REGISTER MODE ---
         const result = await registerAppUser(username, password);
         if (result.success && result.user) {
+          recordUserLogin(result.user.username, result.user.role);
           setSuccessMsg('Kayıt işleminiz başarıyla tamamlandı! Giriş yapılıyor...');
           setTimeout(() => {
             onLoginSuccess(result.user!.username, result.user!.role);
@@ -51,6 +53,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         // --- LOGIN MODE ---
         const result = await loginAppUser(username, password);
         if (result.success && result.user) {
+          recordUserLogin(result.user.username, result.user.role);
           onLoginSuccess(result.user.username, result.user.role);
         } else {
           if (result.isNotRegistered) {

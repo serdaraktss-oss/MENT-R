@@ -1,4 +1,5 @@
 import { DayProgram, ScheduleTask, Student12thGrade } from '../types';
+import { isSubjectAllowedForBranch } from './branchUtils';
 
 /**
  * Generates an adaptive, highly structured 7-day study program.
@@ -6,8 +7,8 @@ import { DayProgram, ScheduleTask, Student12thGrade } from '../types';
  * 1. NO hours/timeSlots (student chooses study time).
  * 2. Days: Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi, Pazar.
  * 3. MANDATORY EVERY SINGLE DAY: TYT Türkçe and TYT Matematik.
- * 4. Branch/Exam specific study targeting weak topics identified in trial exams.
- * 5. Adaptive Question Target based on student's total net score (Academic level).
+ * 4. Sayısal (MF): Only TYT Türkçe, TYT Matematik, TYT/AYT Fen (Fizik, Kimya, Biyoloji) and AYT Matematik.
+ * 5. Eşit Ağırlık (TM): All subjects EXCEPT Fen (Fizik, Kimya, Biyoloji).
  */
 export function generateAdaptiveWeeklyProgram(
   student: Partial<Student12thGrade>
@@ -16,10 +17,6 @@ export function generateAdaptiveWeeklyProgram(
   const aytNet = student.latestAyt?.totalNet || 45;
   const totalNetCombined = tytNet + aytNet;
 
-  // Determine Question Target Multipliers based on Academic Level
-  // High Level (>120 combined net): 40-50 questions/task
-  // Medium Level (80-120 combined net): 25-35 questions/task
-  // Base Level (<80 combined net): 15-25 questions/task (so student isn't discouraged)
   let baseTurkceQuestions = 30;
   let baseMathQuestions = 30;
   let baseBranchQuestions = 25;
@@ -38,8 +35,11 @@ export function generateAdaptiveWeeklyProgram(
     baseBranchQuestions = 15;
   }
 
-  // Identify weak topics from student data or fallback
-  const weakTopicsList = student.decliningKazanimlar || [];
+  // Filter weak topics by student's branch rules first
+  const weakTopicsList = (student.decliningKazanimlar || []).filter((d) =>
+    isSubjectAllowedForBranch(d.subject, student.branch)
+  );
+
   const getWeakTopicForSubject = (subj: string, fallback: string) => {
     const match = weakTopicsList.find(
       (d) => d.subject.toLowerCase().includes(subj.toLowerCase()) || d.topicName.toLowerCase().includes(subj.toLowerCase())
@@ -88,10 +88,11 @@ export function generateAdaptiveWeeklyProgram(
       isWeakTopic: idx % 2 === 1 && mathWeak.includes('(Eksik Konu)'),
     });
 
-    // 3. BRANCH SPECIFIC & WEAK TOPIC STUDY (Dengeli Dağılım)
+    // 3. BRANCH SPECIFIC & WEAK TOPIC STUDY
     if (branchName === 'Sayısal') {
+      // Sayısal (MF): Only TYT Türkçe, TYT Matematik, TYT/AYT Fen & AYT Matematik
       if (idx === 0 || idx === 3) {
-        // AYT Matematik / Fizik
+        // AYT Matematik
         const aytMathWeak = getWeakTopicForSubject('Matematik', 'Trigonometri & Logaritma');
         tasks.push({
           id: `task-${idx}-aytmath`,
@@ -103,23 +104,23 @@ export function generateAdaptiveWeeklyProgram(
           isWeakTopic: aytMathWeak.includes('Eksik'),
         });
       } else if (idx === 1 || idx === 4) {
-        // AYT Fizik / Kimya
+        // AYT / TYT Fizik
         const fizWeak = getWeakTopicForSubject('Fizik', 'Optik & Vektörler');
         tasks.push({
           id: `task-${idx}-fizik`,
-          subject: 'AYT Fizik',
+          subject: 'TYT/AYT Fizik',
           topic: fizWeak,
           focusType: fizWeak.includes('Eksik') ? 'Eksik Konu (Ağırlıklı Odak)' : 'Genel Tekrar',
           questionTarget: baseBranchQuestions,
-          detail: 'Denemedeki yanlış yapılan fizik kavram soruları.',
+          detail: 'Fizik kavram soruları ve vektör bağıntıları.',
           isWeakTopic: fizWeak.includes('Eksik'),
         });
       } else if (idx === 2 || idx === 5) {
-        // AYT Kimya / Biyoloji
+        // AYT / TYT Kimya
         const kimWeak = getWeakTopicForSubject('Kimya', 'Kimyasal Bağlar & Hibritleşme');
         tasks.push({
           id: `task-${idx}-kimya`,
-          subject: 'AYT Kimya',
+          subject: 'TYT/AYT Kimya',
           topic: kimWeak,
           focusType: kimWeak.includes('Eksik') ? 'Eksik Konu (Ağırlıklı Odak)' : 'Genel Tekrar',
           questionTarget: baseBranchQuestions,
@@ -127,37 +128,65 @@ export function generateAdaptiveWeeklyProgram(
           isWeakTopic: kimWeak.includes('Eksik'),
         });
       } else {
-        // Pazar: Genel Deneme Değerlendirmesi & Biyoloji
+        // Pazar: AYT Biyoloji & Sayısal Deneme Değerlendirmesi
         const bioWeak = getWeakTopicForSubject('Biyoloji', 'Hücre Solunumu & Protein Sentezi');
         tasks.push({
           id: `task-${idx}-biyo`,
-          subject: 'AYT Biyoloji / Deneme',
+          subject: 'TYT/AYT Biyoloji',
           topic: bioWeak,
-          focusType: 'Soru Çözümü & Deneme',
+          focusType: bioWeak.includes('Eksik') ? 'Eksik Konu (Ağırlıklı Odak)' : 'Soru Çözümü & Deneme',
           questionTarget: baseBranchQuestions,
           detail: 'Haftalık genel tekrar ve sistem şemaları okuması.',
           isWeakTopic: bioWeak.includes('Eksik'),
         });
       }
     } else if (branchName === 'Eşit Ağırlık') {
-      if (idx % 2 === 0) {
+      // Eşit Ağırlık (TM): All subjects EXCEPT Fen (Fizik, Kimya, Biyoloji)
+      if (idx === 0 || idx === 3) {
+        const edbWeak = getWeakTopicForSubject('Edebiyat', 'Divan Edebiyatı & Nazım Şekilleri');
         tasks.push({
           id: `task-${idx}-edebiyat`,
           subject: 'AYT Edebiyat',
-          topic: getWeakTopicForSubject('Edebiyat', 'Divan Edebiyatı & Nazım Şekilleri'),
-          focusType: 'Eksik Konu (Ağırlıklı Odak)',
+          topic: edbWeak,
+          focusType: edbWeak.includes('Eksik') ? 'Eksik Konu (Ağırlıklı Odak)' : 'Genel Tekrar',
           questionTarget: baseBranchQuestions,
-          detail: 'Eser-yazar eşleştirmesi ve kilit soru çözümü.',
-          isWeakTopic: true,
+          detail: 'Eser-yazar eşleştirmesi ve kilit edebiyat soruları.',
+          isWeakTopic: edbWeak.includes('Eksik'),
+        });
+      } else if (idx === 1 || idx === 4) {
+        const aytMathWeak = getWeakTopicForSubject('Matematik', 'İkinci Dereceden Denklemler & Fonksiyonlar');
+        tasks.push({
+          id: `task-${idx}-tm-math`,
+          subject: 'AYT Matematik',
+          topic: aytMathWeak,
+          focusType: aytMathWeak.includes('Eksik') ? 'Eksik Konu (Ağırlıklı Odak)' : 'Genel Tekrar',
+          questionTarget: baseBranchQuestions,
+          detail: 'AYT Matematik grafik ve denklem soru bankası.',
+          isWeakTopic: aytMathWeak.includes('Eksik'),
+        });
+      } else if (idx === 2 || idx === 5) {
+        const tarWeak = getWeakTopicForSubject('Tarih', 'İnkılap Tarihi & İlk Çağ Medeniyetleri');
+        const cogWeak = getWeakTopicForSubject('Coğrafya', 'Türkiye İklimi & Harita Bilgisi');
+        tasks.push({
+          id: `task-${idx}-tarcog`,
+          subject: 'TYT/AYT Tarih & Coğrafya',
+          topic: idx === 2 ? tarWeak : cogWeak,
+          focusType: 'Genel Tekrar & Soru Çözümü',
+          questionTarget: baseBranchQuestions,
+          detail: 'Harita okuma, kavram analizleri ve kronoloji çalışması.',
+          isWeakTopic: (idx === 2 ? tarWeak : cogWeak).includes('Eksik'),
         });
       } else {
+        // Pazar: Felsefe & TM Genel Deneme Değerlendirmesi
+        const felWeak = getWeakTopicForSubject('Felsefe', 'Felsefi Düşünce & Mantık');
         tasks.push({
-          id: `task-${idx}-cografya`,
-          subject: 'AYT Tarih & Coğrafya',
-          topic: getWeakTopicForSubject('Tarih', 'İnkılap Tarihi & Türkiye İklimi'),
-          focusType: 'Genel Tekrar',
+          id: `task-${idx}-felsefe`,
+          subject: 'TYT/AYT Sosyal Bilimler (Felsefe & Din)',
+          topic: felWeak,
+          focusType: 'Deneme & Kavram Tekrarı',
           questionTarget: baseBranchQuestions,
-          detail: 'Harita okuma ve kronoloji çalışması.',
+          detail: 'TM alan deneme analizi ve sosyal bilimler kavram testi.',
+          isWeakTopic: felWeak.includes('Eksik'),
         });
       }
     } else {

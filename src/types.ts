@@ -65,7 +65,8 @@ export interface TeknofestProject {
 
 export interface AnnualPlanDocument {
   id: string;
-  subject: string; // e.g. 'Matematik', 'Fizik', 'Türkçe', 'Kimya', 'Biyoloji', 'Edebiyat', 'Tarih', 'Coğrafya'
+  subject: string; // Ders Adı
+  gradeLevel: '9. Sınıf' | '10. Sınıf' | '11. Sınıf' | '12. Sınıf' | 'Ortak / Tüm Sınıflar' | string; // Sınıf Seviyesi
   branch: 'Sayısal' | 'Eşit Ağırlık' | 'Sözel' | 'Dil' | 'Ortak / Tüm Branşlar';
   fileName: string;
   fileSize: string;
@@ -148,7 +149,7 @@ export interface DayProgram {
 export interface Student12thGrade {
   id: string;
   name: string;
-  className: '12-A Fen Bilimleri' | '12-B Sayısal' | '12-C Eşit Ağırlık' | '12-D Dil';
+  className: '12 MFA' | '12 TMA' | '12 TMB' | string;
   studentNo: string;
   branch: 'Sayısal' | 'Eşit Ağırlık' | 'Sözel' | 'Dil';
   avatarUrl: string;

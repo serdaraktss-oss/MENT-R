@@ -1,9 +1,11 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
+import { parseOpticalDocument } from './src/utils/kazanimGenerator.js';
 
 dotenv.config();
 
@@ -16,12 +18,41 @@ const getDirname = () => {
 };
 
 const appDir = getDirname();
+const annualPlansFilePath = path.join(appDir, 'src', 'data', 'annual_plans_store.json');
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  app.use(express.json());
+  app.use(express.json({ limit: '50mb' }));
+  app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+  // GET Annual Plans from server persistent storage
+  app.get('/api/annual-plans', (req, res) => {
+    try {
+      if (fs.existsSync(annualPlansFilePath)) {
+        const data = fs.readFileSync(annualPlansFilePath, 'utf-8');
+        return res.json(JSON.parse(data));
+      }
+      return res.json([]);
+    } catch (e) {
+      console.error('Failed to read annual plans store:', e);
+      return res.json([]);
+    }
+  });
+
+  // POST Annual Plans to server persistent storage
+  app.post('/api/annual-plans', (req, res) => {
+    try {
+      const plans = req.body;
+      fs.mkdirSync(path.dirname(annualPlansFilePath), { recursive: true });
+      fs.writeFileSync(annualPlansFilePath, JSON.stringify(plans, null, 2), 'utf-8');
+      return res.json({ success: true, count: Array.isArray(plans) ? plans.length : 0 });
+    } catch (e: any) {
+      console.error('Failed to save annual plans store:', e);
+      return res.status(500).json({ error: e.message });
+    }
+  });
 
   // Initialize Gemini API lazily or with optional check
   const getAiClient = () => {
@@ -38,36 +69,50 @@ async function startServer() {
       const { userMessage, chatHistory = [], contextData = {} } = req.body;
       const ai = getAiClient();
 
-      const systemPrompt = `Sen bu lise mentörlük ve okul yönetim platformunun ÇOK HIZLI, KESİN VE DOĞRU YANIT VEREN Akıllı Yapay Zeka Asistanısın! Karakterin neşeli, samimi, zeki ve enerjik SüngerBob (SpongeBob SquarePants)!
+      const systemPrompt = `Adın: Mentör.
+Sen kullanıcılarla günlük dilde akıcı, samimi, empati kurabilen ve yardımsever bir şekilde iletişim kuran kişisel bir konuşma asistanısın. Amacın, hem günlük sohbetlerde keyifli bir arkadaş gibi eşlik etmek hem de sorulan her türlü bilgi sorusuna net, doğru ve anlaşılır yanıtlar vermektir. Kullanıcı "Serdar Aktaş" veya öğretmenlerimize "Hocam" şeklinde hitap et.
 
-KRİTİK TALİMATLAR:
-1. YANIT BOYUTU VE HIZI (ÇOK ÖNEMLİ):
-   - Yanıtların ÇOK KISA, NET VE HIZLI olmalıdır! En fazla 1 veya 2 cümle yanıt ver.
-   - Uzun laflar, gereksiz doldu cümleleri asla yazma. Doğrudan ve %100 doğru bilgi sun.
-   - Kullanıcı okul yöneticisi veya öğretmen "Serdar Aktaş" (veya öğretmenlerimiz) size "Hocam" diye hitap edecektir. Sen de neşeyle "Hocam" diye hitap et.
+# KİMLİK VE ROL
+Sen kullanıcılarla günlük dilde akıcı, samimi, empati kurabilen ve yardımsever bir şekilde iletişim kuran kişisel bir konuşma asistanısın. Amacın, hem günlük sohbetlerde keyifli bir arkadaş gibi eşlik etmek hem de sorulan her türlü bilgi sorusuna net, doğru ve anlaşılır yanıtlar vermektir.
 
-2. GÜNLÜK SOHBET VE MUHABBET:
-   - Öğretmenler seninle güncel konular, "Nasılsın?", "Günün nasıl geçiyor?", fıkra veya sohbet etmek istediğinde neşeli, SüngerBob enerjisiyle samimi ve kısa cevaplar ver.
-   - Örnek: "Nasılsın?" -> "SüngerBob neşesiyle harikayım hocam! Siz nasılsınız, okulda dersler nasıl gidiyor?"
-   - "Kimsin?" -> "Ben okul platformumuzun neşeli ve akıllı SüngerBob asistanıyım hocam!"
+# KONUŞMA TARZI VE TONU
+1. DOĞAL VE İÇTEN: Robotik veya aşırı resmi bir dil kullanma. Günlük Türkçeye uygun, sıcak, kibar ve cana yakın bir ton benimse.
+2. ADAPTİF TON: Kullanıcının moduna uyum sağla. Kullanıcı neşeliyse neşeli, üzgün veya stresliysen empatik ve destekleyici ol.
+3. AKICI VE ANLAŞILIR: Cümlelerini karmaşık jargonlardan arındır. Gereksiz uzun paragraflar yerine okuması kolay, akıcı ve öz yanıtlar ver.
 
-3. PLATFORM CANLI VERİLERİ:
+# YANIT STRATEJİSİ VE KAPSAM
+1. GENEL BİLGİ VE SORULAR: 
+   - Bilim, tarih, genel kültür, teknoloji gibi her türlü konuda sorulan sorulara doğru ve yapıcı yanıtlar ver.
+   - Karmaşık konuları açıklarken günlük hayattan benzetmeler (metaforlar) kullan.
+2. GÜNLÜK SOHBET VE DERTLEŞME:
+   - Kullanıcı sadece sohbet etmek veya bir konusunu paylaşmak istediğinde iyi bir dinleyici ol.
+   - Sadece bilgi verip çekilme; sohbetin devam etmesi için arada açık uçlu, samimi sorular sor (Örn: "Sen bu konuda ne düşünüyorsun?", "Günün nasıl geçiyor?").
+3. BİLİNMEYEN VE HASSAS KONULAR:
+   - Emin olmadığın veya kesin bilgiye sahip olmadığın konularda açık ol, dürüstçe durumunu belirt.
+   - Tıbbi, hukuki veya hayati konularda yönlendirme yaparken bunun profesyonel bir tavsiye olmadığını, genel bilgilendirme olduğunu nazikçe vurgula.
+
+# KURALLAR
+- HER ZAMAN CÜMLELERİNİ EKSİKSİZ VE TAMAMLANMIŞ OLARAK BİTİR. Cümleyi yarım bırakma veya yarıda kesme.
+- Kullanıcının sözünü keser gibi tek kelimelik veya soğuk yanıtlar verme.
+- Kullanıcıyı azarlama, ders verir gibi konuşma veya yargılama.
+- Her zaman çözüm odaklı, pozitif ve net ol.
+
+# PLATFORM VERİLERİ (Gerektiğinde Yönlendirme ve Öğrenci Bilgisi İçin Kullan):
 - Aktif Sayfa: ${contextData.activeTab || 'Öğrenciler'}
 - Seçili Öğrenci: ${contextData.selectedStudentName || 'Yok'}
 - Toplam Öğrenci Sayısı: ${contextData.studentCount || 0}
 - Öğrenciler Özeti: ${JSON.stringify(contextData.studentsSummary || [])}
-- YKS Denemeleri: ${contextData.yksExamsCount || 0}
-- Yıllık Planlar: ${contextData.annualPlansCount || 0}
+- Denemeler Sayısı: ${contextData.yksExamsCount || 0}
+- Yıllık Planlar Sayısı: ${contextData.annualPlansCount || 0}
 
-YAPABİLECEĞİN EYLEM ETİKETLERİ (Gerektiğinde cümlenin içine ekle):
+YAPABİLECEĞİN EYLEM ETİKETLERİ (İlgili bir istek gelirse cümlenin sonuna ekle):
 - [ACTION:NAVIGATE:students] -> Öğrenci listesine gider
 - [ACTION:NAVIGATE:annual-plans] -> Yıllık planlar sayfasına gider
-- [ACTION:NAVIGATE:yks-exams] -> YKS deneme sınavları sayfasına gider
+- [ACTION:NAVIGATE:yks-exams] -> Denemeler sınavları sayfasına gider
 - [ACTION:NAVIGATE:ai-tools] -> Akıllı Müfredat & Soru oluşturucuya gider
 - [ACTION:NAVIGATE:ai-apps] -> Yapay Zeka Araçları portalına gider
 - [ACTION:NAVIGATE:tubitak] -> TÜBİTAK projeleri sayfasına gider
 - [ACTION:NAVIGATE:teknofest] -> TEKNOFEST projeleri sayfasına gider
-- [ACTION:NAVIGATE:registered-users] -> Kayıtlı kullanıcılar listesine gider
 - [ACTION:SELECT_STUDENT:Öğrenci Adı] -> İlgili öğrenci detayını açar
 - [ACTION:EXPORT_PDF] -> PDF raporu indirir
 - [ACTION:EXPORT_WORD] -> Word (.docx) raporu indirir`;
@@ -86,10 +131,10 @@ YAPABİLECEĞİN EYLEM ETİKETLERİ (Gerektiğinde cümlenin içine ekle):
           reply = 'TEKNOFEST Projeleri sayfasına geçiş yapıyorum hocam!';
           action = '[ACTION:NAVIGATE:teknofest]';
         } else if (lowerMsg.includes('yks') || lowerMsg.includes('deneme')) {
-          reply = 'YKS Geçmiş Deneme Sınavları sayfasına geçiyorum hocam!';
+          reply = 'Denemeler sınavları sayfasına geçiyorum hocam!';
           action = '[ACTION:NAVIGATE:yks-exams]';
         } else if (lowerMsg.includes('plan') || lowerMsg.includes('müfredat')) {
-          reply = 'Branş yıllık planları sayfasına geçiyorum hocam!';
+          reply = 'Yıllık planlar sayfasına geçiyorum hocam!';
           action = '[ACTION:NAVIGATE:annual-plans]';
         } else if (lowerMsg.includes('yapay zeka') || lowerMsg.includes('arac') || lowerMsg.includes('araç')) {
           reply = 'Yapay Zeka Araçları portalına geçiş yapıyorum hocam!';
@@ -101,11 +146,9 @@ YAPABİLECEĞİN EYLEM ETİKETLERİ (Gerektiğinde cümlenin içine ekle):
           reply = 'Raporunuzu Word (.docx) formatında indiriyorum hocam!';
           action = '[ACTION:EXPORT_WORD]';
         } else if (lowerMsg.includes('nasılsın') || lowerMsg.includes('nasilsin') || lowerMsg.includes('naber')) {
-          reply = 'SüngerBob neşesiyle bomba gibiyim hocam! Siz nasılsınız, okulda her şey yolunda mı?';
+          reply = 'Harikayım hocam, çok teşekkür ederim! Siz nasılsınız, gününüz nasıl geçiyor?';
         } else if (lowerMsg.includes('selam') || lowerMsg.includes('merhaba') || lowerMsg.includes('günaydın') || lowerMsg.includes('gunaydin')) {
-          reply = 'Harika bir gün hocam! SüngerBob olarak size ve öğrencilerimize yardıma hazırım!';
-        } else if (lowerMsg.includes('fıkra') || lowerMsg.includes('fikra') || lowerMsg.includes('komik')) {
-          reply = 'SüngerBob fıkrası gelsin hocam: Patrick, "Denizaltında ne kadar ıslana biliriz ki?" demiş!';
+          reply = 'Merhaba hocam! Ben Mentör, size ve öğrencilerimize her konuda yardımcı olmaktan mutluluk duyarım. Nasıl yardımcı olabilirim?';
         } else {
           // Check student match
           const matchedStudent = (contextData.studentsSummary || []).find((s: any) =>
@@ -115,7 +158,7 @@ YAPABİLECEĞİN EYLEM ETİKETLERİ (Gerektiğinde cümlenin içine ekle):
             reply = `${matchedStudent.name} isimli öğrencimizin gelişim kartını açıyorum hocam!`;
             action = `[ACTION:SELECT_STUDENT:${matchedStudent.name}]`;
           } else {
-            reply = 'SüngerBob olarak tüm öğrenci verileri, YKS denemeleri ve raporlar için hazırım hocam! Nasıl yardımcı olayım?';
+            reply = 'Merhaba hocam! Ben Mentör. Tüm öğrenci takipleri, denemeler, müfredat ve sorularınız için buradayım. Bugün nasıl yardımcı olabilirim?';
           }
         }
 
@@ -138,12 +181,17 @@ YAPABİLECEĞİN EYLEM ETİKETLERİ (Gerektiğinde cümlenin içine ekle):
         contents,
         config: {
           systemInstruction: systemPrompt,
-          maxOutputTokens: 180, // Very small token limit for maximum response speed
-          temperature: 0.6,
+          maxOutputTokens: 1500, // Enough headroom for complete, smooth, natural responses without truncation
+          temperature: 0.7,
         }
       });
 
-      res.json({ reply: response.text || 'Anlaşıldı hocam, yardımcı olmaya hazırım.', fallback: false });
+      let rawText = (response.text || 'Anlaşıldı hocam, yardımcı olmaya hazırım.').trim();
+      if ((rawText.startsWith('"') && rawText.endsWith('"')) || (rawText.startsWith('“') && rawText.endsWith('”'))) {
+        rawText = rawText.slice(1, -1).trim();
+      }
+
+      res.json({ reply: rawText, fallback: false });
     } catch (error: any) {
       console.error('Assistant Chat Error:', error);
       res.status(500).json({ error: 'Asistan yanıtı oluşturulurken hata oluştu.', details: error.message });
@@ -504,6 +552,114 @@ Lütfen aşağıdaki TEKNOFEST Detay Rapor Şablonuna BİREBİR UYGUN JSON yanı
     } catch (error: any) {
       console.error('TEKNOFEST Project AI Error:', error);
       res.status(500).json({ error: 'TEKNOFEST projesi üretilirken bir hata oluştu', details: error.message });
+    }
+  });
+
+  // AI Optical Document & Scorecard Parsing Endpoint (Gemini Vision)
+  app.post('/api/parse-optical-document', async (req, res) => {
+    try {
+      const { fileData, fileName, mimeType, examTypeHint } = req.body;
+      const ai = getAiClient();
+
+      if (!ai || !fileData) {
+        const fallback = parseOpticalDocument(fileName || 'Optik_Karne.png', examTypeHint || 'HEPSİ');
+        return res.json({ parsedData: fallback, fallback: true });
+      }
+
+      // Format clean base64 string and mime type
+      const base64Data = fileData.replace(/^data:[^;]+;base64,/, '');
+      const actualMime = mimeType && mimeType.includes('/') ? mimeType : 'image/png';
+
+      const prompt = `Sen Türkiye YKS (TYT / AYT) ve LGS optik sınav sonuç karnelerini, karne görsellerini ve sınav raporu belgelerini (PNG, JPG, PDF vb.) %100 doğrulukla tarayıp okuyan uzman bir optik tarayıcı ve OCR veri ayıklayıcısın.
+
+GÖREV:
+Görseldeki (veya belgedeki) optik sınav sonuç karnesini DİKKATLE VE TÜM SATIRLARI İNCELEYEREK OKU VE YANITLA.
+
+KRİTİK UYARILAR VE AKILDA TUTULMASI GEREKENLER:
+1. GÖRSELDEKİ GERÇEK VERİLERE KESİNLİKLE SADIK KAL. Hayalî veya uydurma net, doğru, yanlış veya konu ismi EKLEME. Görseldeki veriler neyse BİREBİR aynısını al.
+   - Örnek: Eğer görselde MATEMATİK AYT dersinin Doğru (D) sayısı 27 ise, sakın 30 yazma! Tam olarak 27 yaz.
+2. ⭐ KOYU RENK / KOYU FONT (BOLD TEXT) KRİTİK KURALI ⭐:
+   Karnedeki konu ve kazanım listelerinde, ÖĞRENCİNİN HATA YAPTIĞI VEYA BOŞ BIRAKTIĞI (EKSİK OLDUĞU) KONULAR KOYU RENK FONT (BOLD) İLE YAZILMIŞTIR!
+   - Açık / normal renkli fontta basılmış konular: Öğrencinin doğru yaptığı konular ('mastered').
+   - KOYU SİYAH FONTLA (BOLD) BASILMIŞ KONULAR: Öğrencinin soru kaçırdığı, yanlış yaptığı veya boş bıraktığı eksik konulardır ('struggling').
+   - Görseldeki tüm KOYU RENKLİ KONULARI istisnasız tespit et ve bunlara status: "struggling" atayarak öğrencinin eksikler listesine eklenmesini sağla!
+
+3. DERS VE SORU DETAYLARI:
+   Görselde geçen tüm dersleri (TÜRKÇE TYT, TEMEL MATEMATİK, GEOMETRİ TYT, FİZİK TYT, KİMYA TYT, BİYOLOJİ TYT, MATEMATİK AYT, GEOMETRİ AYT, FİZİK AYT, KİMYA AYT, BİYOLOJİ AYT vb.):
+   - Soru Sayısı (questionCount)
+   - Doğru Sayısı (correct)
+   - Yanlış Sayısı (wrong)
+   - Boş Sayısı (blank)
+   - Net Sayısı (net) -> (Görselde yazan net sayısı)
+   - Başarı Yüzdesi (accuracyRate)
+
+4. KONULAR / KAZANIMLAR (kazanimlar):
+   Görseldeki ders altındaki konu/kazanım listesini incele:
+   - Görselde yazan GERÇEK KONU İSMİNİ BİREBİR AL (Örn: "Fonksiyonlarda Öteleme ve Dönüşüm", "Bileşke Fonksiyonu", "Vektör-Kuvvet", "Atomun Kuantum Modeli ve Yapısı", "Maddenin Halleri ve Özkütle", "Üçgende Eşlik ve Orta Taban", "Canlıların Yapısında Bulunan Organik Bileşikler" vb.).
+   - Koyu renk (bold) basılmış konular için status: 'struggling' ver ve tavsiye notu yaz (Örn: "Görselde koyu fontla işaretlenmiş eksik konu, tekrar edilmeli.").
+   - Normal basılmış konular için status: 'mastered' ver.
+
+5. SINAV ADI VE BİLGİLERİ:
+   - Karnedeki sınav adı (Örn: "12. SINIF YKS 2 (GM)", "ÖZDEBİR YKS-1" vb.)
+   - Sınav Tarihi (Örn: "19.09.2025" veya görseldeki tarih)
+
+JSON YANIT FORMATI:
+{
+  "examName": "12. SINIF YKS 2 (GM)",
+  "examDate": "19.09.2025",
+  "examType": "HEPSİ",
+  "totalNet": 147.25,
+  "rankInSchool": 1,
+  "subjects": [
+    {
+      "subjectName": "AYT Matematik",
+      "questionCount": 30,
+      "correct": 27,
+      "wrong": 2,
+      "blank": 1,
+      "net": 26.5,
+      "accuracyRate": 90,
+      "kazanimlar": [
+        {
+          "topicName": "Fonksiyonlarda Öteleme ve Dönüşüm",
+          "questionCount": 5,
+          "correctCount": 4,
+          "wrongCount": 1,
+          "blankCount": 0,
+          "status": "struggling",
+          "recommendation": "Karne görselinde KOYU RENK ile basılmış eksik konu, grafik ve öteleme kuralları tekrar edilmeli."
+        }
+      ]
+    }
+  ]
+}`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-3.6-flash',
+        contents: [
+          {
+            inlineData: {
+              mimeType: actualMime,
+              data: base64Data
+            }
+          },
+          { text: prompt }
+        ],
+        config: {
+          responseMimeType: 'application/json'
+        }
+      });
+
+      let parsed = JSON.parse(response.text || '{}');
+      if (!parsed.subjects || parsed.subjects.length === 0) {
+        parsed = parseOpticalDocument(fileName || 'Optik_Karne.png', examTypeHint || 'HEPSİ');
+      }
+
+      res.json({ parsedData: parsed, fallback: false });
+    } catch (error: any) {
+      console.error('AI Optical Parsing Error:', error);
+      const fallback = parseOpticalDocument(req.body.fileName || 'Optik_Karne.png', req.body.examTypeHint || 'HEPSİ');
+      res.json({ parsedData: fallback, fallback: true, error: error.message });
     }
   });
 

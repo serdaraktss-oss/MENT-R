@@ -33,7 +33,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         .toUpperCase()
     : 'M';
 
-  const navItems = [
+  const allNavItems = [
     {
       id: 'students' as NavTab,
       label: 'Öğrenciler',
@@ -49,7 +49,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       id: 'yks-exams' as NavTab,
-      label: 'YKS Geçmiş Denemeler',
+      label: 'Denemeler',
       icon: FileSpreadsheet,
       description: 'Serdar Aktaş Özel • Deneme Arşivi',
     },
@@ -71,12 +71,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'TÜBİTAK Projeleri',
       icon: Award,
       description: '2204 Araştırma Raporu Taslağı',
+      isManagerOnly: true,
     },
     {
       id: 'teknofest' as NavTab,
       label: 'TEKNOFEST Projeleri',
       icon: Rocket,
       description: 'Havacılık & İnovasyon Detay Raporu',
+      isManagerOnly: true,
     },
     {
       id: 'registered-users' as NavTab,
@@ -84,8 +86,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
       icon: UserCheck,
       badge: 'Supabase',
       description: 'Serdar Aktaş Özel • Üye Yönetimi',
+      isManagerOnly: true,
     },
   ];
+
+  const navItems = allNavItems.filter((item) => !item.isManagerOnly || isManager);
 
   return (
     <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between shrink-0 h-screen sticky top-0 z-30">
