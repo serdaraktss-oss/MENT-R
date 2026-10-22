@@ -1,0 +1,355 @@
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = ((import.meta as any).env && (import.meta as any).env.VITE_SUPABASE_URL) || 'https://xeznkvkjdycmiubfyujq.supabase.co';
+const SUPABASE_ANON_KEY = ((import.meta as any).env && (import.meta as any).env.VITE_SUPABASE_ANON_KEY) || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhlem5rdmtqZHljbWl1YmZ5dWpxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ5MzcwNTEsImV4cCI6MjEwMDUxMzA1MX0.7AAUnM9ChqRViDBa6zLSa9AiEb4i29zCbhg0AQ8yoyU';
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+export interface AppUserRecord {
+  id?: string;
+  username: string;
+  password?: string;
+  role: string;
+  created_at?: string;
+}
+
+const LOCAL_USERS_KEY = 'mentor_app_registered_users';
+
+// Helper to get local fallback users
+const getLocalUsers = (): AppUserRecord[] => {
+  try {
+    const raw = localStorage.getItem(LOCAL_USERS_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (err) {
+    console.error('Error reading local users', err);
+  }
+  return [
+    {
+      id: 'admin-1',
+      username: 'Serdar Aktaş',
+      role: 'Yönetici',
+      created_at: new Date().toISOString(),
+    }
+  ];
+};
+
+const saveLocalUser = (newUser: AppUserRecord) => {
+  try {
+    const existing = getLocalUsers();
+    if (!existing.some(u => u.username.toLowerCase() === newUser.username.toLowerCase())) {
+      const updated = [newUser, ...existing];
+      localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(updated));
+    }
+  } catch (err) {
+    console.error('Error saving local user', err);
+  }
+};
+
+/**
+ * Log in a user (Checks Serdar Aktaş admin credentials first, then Supabase app_users table, then local fallback)
+ */
+export async function loginAppUser(username: string, password: string): Promise<{
+  success: boolean;
+  user?: AppUserRecord;
+  error?: string;
+  isNotRegistered?: boolean;
+}> {
+  const cleanUsername = username.trim();
+  const cleanPassword = password.trim();
+
+  if (!cleanUsername || !cleanPassword) {
+    return { success: false, error: 'Kullanıcı adı ve şifre zorunludur.' };
+  }
+
+  // 1. Admin account override check
+  const lowerName = cleanUsername.toLowerCase();
+  if (lowerName === 'serdar aktaş' || lowerName === 'serdar aktas') {
+    if (cleanPassword === '12345') {
+      return {
+        success: true,
+        user: {
+          id: 'admin-serdar',
+          username: 'Serdar Aktaş',
+          role: 'Yönetici',
+          created_at: new Date().toISOString()
+        }
+      };
+    } else {
+      return { success: false, error: 'Yönetici şifresi hatalıdır. (Varsayılan şifre: 12345)' };
+    }
+  }
+
+  // 2. Query Supabase
+  try {
+    const { data, error } = await supabase
+      .from('app_users')
+      .select('*')
+      .ilike('username', cleanUsername)
+      .limit(1);
+
+    if (!error && data && data.length > 0) {
+      const found = data[0];
+      if (found.password === cleanPassword) {
+        return {
+          success: true,
+          user: {
+            id: found.id,
+            username: found.username,
+            role: found.role || 'Mentör',
+            created_at: found.created_at
+          }
+        };
+      } else {
+        return { success: false, error: 'Girdiğiniz şifre hatalı!' };
+      }
+    }
+  } catch (e) {
+    console.warn('Supabase query failed, falling back to local storage', e);
+  }
+
+  // 3. Fallback to LocalStorage
+  const localList = getLocalUsers();
+  const matchedLocal = localList.find(u => u.username.toLowerCase() === cleanUsername.toLowerCase());
+  if (matchedLocal) {
+    if (matchedLocal.password && matchedLocal.password !== cleanPassword) {
+      return { success: false, error: 'Girdiğiniz şifre hatalı!' };
+    }
+    return { success: true, user: matchedLocal };
+  }
+
+  return {
+    success: false,
+    isNotRegistered: true,
+    error: 'Bu kullanıcı adı bulunamadı. Lütfen kayıt olun!'
+  };
+}
+
+/**
+ * Register a new user with username and password
+ */
+export async function registerAppUser(username: string, password: string): Promise<{
+  success: boolean;
+  user?: AppUserRecord;
+  error?: string;
+}> {
+  const cleanUsername = username.trim();
+  const cleanPassword = password.trim();
+
+  if (!cleanUsername || !cleanPassword) {
+    return { success: false, error: 'Lütfen kullanıcı adı ve şifre giriniz.' };
+  }
+
+  if (cleanUsername.toLowerCase() === 'serdar aktaş' || cleanUsername.toLowerCase() === 'serdar aktas') {
+    return { success: false, error: 'Bu kullanıcı adı yönetim hesabıdır, kayıt oluşturulamaz.' };
+  }
+
+  const newUserRecord: AppUserRecord = {
+    username: cleanUsername,
+    password: cleanPassword,
+    role: 'Mentör',
+    created_at: new Date().toISOString()
+  };
+
+  // Try to insert in Supabase
+  try {
+    // Check if user exists
+    const { data: existing } = await supabase
+      .from('app_users')
+      .select('id')
+      .ilike('username', cleanUsername);
+
+    if (existing && existing.length > 0) {
+      return { success: false, error: 'Bu kullanıcı adı zaten kayıtlı! Lütfen giriş yapın.' };
+    }
+
+    const { data, error } = await supabase
+      .from('app_users')
+      .insert([
+        {
+          username: cleanUsername,
+          password: cleanPassword,
+          role: 'Mentör'
+        }
+      ])
+      .select();
+
+    if (error) {
+      console.warn('Supabase insert error, saving locally:', error.message);
+      saveLocalUser(newUserRecord);
+    } else if (data && data[0]) {
+      newUserRecord.id = data[0].id;
+      newUserRecord.created_at = data[0].created_at;
+      saveLocalUser(newUserRecord);
+    }
+  } catch (e) {
+    console.warn('Supabase registration error, saving locally:', e);
+    saveLocalUser(newUserRecord);
+  }
+
+  return { success: true, user: newUserRecord };
+}
+
+/**
+ * Fetch all registered users for Admin (Serdar Aktaş)
+ */
+export async function fetchAllRegisteredUsers(): Promise<AppUserRecord[]> {
+  let supabaseUsers: AppUserRecord[] = [];
+
+  try {
+    const { data, error } = await supabase
+      .from('app_users')
+      .select('id, username, role, created_at')
+      .order('created_at', { ascending: false });
+
+    if (!error && data) {
+      supabaseUsers = data;
+    }
+  } catch (e) {
+    console.warn('Could not fetch users from Supabase:', e);
+  }
+
+  const localUsers = getLocalUsers();
+
+  // Merge lists without duplicates
+  const map = new Map<string, AppUserRecord>();
+
+  // Ensure default admin is present
+  map.set('serdar aktaş', {
+    id: 'admin-serdar',
+    username: 'Serdar Aktaş',
+    role: 'Yönetici',
+    created_at: new Date().toISOString()
+  });
+
+  supabaseUsers.forEach(u => {
+    if (!u.username.startsWith('__') && !u.username.includes('__STORE') && u.role !== 'SYSTEM_CLOUD_STORE' && u.role !== 'SYSTEM_STORE') {
+      map.set(u.username.toLowerCase(), u);
+    }
+  });
+  localUsers.forEach(u => {
+    if (!map.has(u.username.toLowerCase()) && !u.username.startsWith('__') && !u.username.includes('__STORE')) {
+      map.set(u.username.toLowerCase(), u);
+    }
+  });
+
+  return Array.from(map.values());
+}
+
+/**
+ * Delete a registered user from Supabase and local storage
+ */
+export async function deleteRegisteredUser(username: string): Promise<boolean> {
+  const cleanUsername = username.trim();
+  try {
+    // Delete from Supabase
+    await supabase.from('app_users').delete().ilike('username', cleanUsername);
+  } catch (e) {
+    console.warn('Error deleting user from Supabase:', e);
+  }
+
+  // Delete from LocalStorage cache
+  try {
+    const localUsers = getLocalUsers();
+    const updated = localUsers.filter((u) => u.username.toLowerCase() !== cleanUsername.toLowerCase());
+    localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(updated));
+  } catch (e) {}
+
+  return true;
+}
+
+/**
+ * Shared Cloud Data Persistence via Supabase
+ * Synchronizes Students, Annual Plans, and YKS Exams across all devices & users.
+ */
+export async function fetchSharedCloudData<T>(key: string): Promise<{ found: boolean; data: T | null }> {
+  const storeKey = `__CLOUD_STORE_${key}__`;
+
+  // 1. Try Supabase app_users system store row
+  try {
+    const { data: userRow, error: userErr } = await supabase
+      .from('app_users')
+      .select('password')
+      .eq('username', storeKey)
+      .maybeSingle();
+
+    if (!userErr && userRow && userRow.password) {
+      try {
+        const parsed = JSON.parse(userRow.password);
+        try {
+          localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(parsed));
+        } catch (e) {}
+        return { found: true, data: parsed as T };
+      } catch (e) {
+        console.warn(`JSON parse error for ${key}:`, e);
+      }
+    }
+  } catch (err) {
+    console.warn(`Supabase cloud fetch error for "${key}":`, err);
+  }
+
+  // 2. Try Supabase 'app_store' table
+  try {
+    const { data: storeData, error: storeError } = await supabase
+      .from('app_store')
+      .select('content')
+      .eq('key', key)
+      .maybeSingle();
+
+    if (!storeError && storeData && storeData.content !== undefined && storeData.content !== null) {
+      try {
+        localStorage.setItem(`cloud_cache_${key}`, JSON.stringify(storeData.content));
+      } catch (e) {}
+      return { found: true, data: storeData.content as T };
+    }
+  } catch (err) {}
+
+  // 3. Fallback to localStorage cache
+  try {
+    const cached = localStorage.getItem(`cloud_cache_${key}`);
+    if (cached !== null) {
+      return { found: true, data: JSON.parse(cached) as T };
+    }
+  } catch (e) {}
+
+  return { found: false, data: null };
+}
+
+export async function saveSharedCloudData<T>(key: string, content: T): Promise<boolean> {
+  const storeKey = `__CLOUD_STORE_${key}__`;
+  const jsonString = JSON.stringify(content);
+
+  // Save to local cache first
+  try {
+    localStorage.setItem(`cloud_cache_${key}`, jsonString);
+  } catch (e) {}
+
+  // 1. Upsert to Supabase app_users
+  try {
+    const { error } = await supabase
+      .from('app_users')
+      .upsert(
+        {
+          username: storeKey,
+          password: jsonString,
+          role: 'SYSTEM_CLOUD_STORE',
+          created_at: new Date().toISOString()
+        },
+        { onConflict: 'username' }
+      );
+
+    if (!error) return true;
+    console.warn(`Supabase save issue for key ${key}:`, error.message);
+  } catch (err) {
+    console.warn(`Supabase save error for key "${key}":`, err);
+  }
+
+  // 2. Backup attempt to 'app_store'
+  try {
+    await supabase
+      .from('app_store')
+      .upsert({ key, content, updated_at: new Date().toISOString() }, { onConflict: 'key' });
+  } catch (e) {}
+
+  return false;
+}
+
