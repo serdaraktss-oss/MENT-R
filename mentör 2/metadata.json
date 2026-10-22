@@ -1,0 +1,6 @@
+{
+  "name": "MANTÖR",
+  "description": "Öğretmenler için 12. Sınıf Öğrenci Takip, TYT/AYT Deneme Analizi, Kazanım Gelişim Tespiti ve PDF Çalışma Programı Platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

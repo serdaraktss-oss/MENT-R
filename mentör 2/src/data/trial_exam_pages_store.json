@@ -1,0 +1,6688 @@
+{
+  "TYT_1": {
+    "examNumber": 1,
+    "examType": "TYT",
+    "examTitle": "UĞUR TYT Deneme-1",
+    "examDate": "2026-09-11",
+    "image1": {
+      "id": "img-1792247684925-1",
+      "name": "PHOTO-2026-10-07-13-03-06 (3).jpg",
+      "previewUrl": "/uploads/exam_images/1792247684745_PHOTO-2026-10-07-13-03-06__3_.jpg",
+      "size": "205 KB"
+    },
+    "image2": {
+      "id": "img-1792247692198-2",
+      "name": "PHOTO-2026-10-07-13-02-27 (4).jpg",
+      "previewUrl": "/uploads/exam_images/1792247692017_PHOTO-2026-10-07-13-02-27__4_.jpg",
+      "size": "194 KB"
+    },
+    "parsedRows": [
+      {
+        "id": "row-1792247825655-0",
+        "scannedName": "KAAN USTA",
+        "matchedStudentId": "stu-4b41414e20",
+        "studentNo": "521",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 4,
+            "blank": 5,
+            "net": 30
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 16,
+            "wrong": 6,
+            "blank": 18,
+            "net": 14.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 2,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 5,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 6,
+            "net": 0
+          }
+        ],
+        "totalNet": 59.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825655-1",
+        "scannedName": "DAMLASU YILDIRIM",
+        "matchedStudentId": "stu-44414d4c41",
+        "studentNo": "260",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 5,
+            "blank": 3,
+            "net": 30.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 11,
+            "wrong": 5,
+            "blank": 24,
+            "net": 9.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 0,
+            "net": 3.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 2,
+            "net": 2.75
+          }
+        ],
+        "totalNet": 60,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825655-2",
+        "scannedName": "YUSUF MUHAMMED ŞEN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "726",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 37,
+            "wrong": 1,
+            "blank": 2,
+            "net": 36.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 26,
+            "wrong": 7,
+            "blank": 7,
+            "net": 24.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 2,
+            "blank": 0,
+            "net": 4.5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 3,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 1,
+            "net": 5
+          }
+        ],
+        "totalNet": 84.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-3",
+        "scannedName": "YUSUF EREN DOĞAN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 6,
+            "blank": 1,
+            "net": 31.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 7,
+            "blank": 8,
+            "net": 23.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 6,
+            "wrong": 1,
+            "blank": 0,
+            "net": 5.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 6,
+            "wrong": 1,
+            "blank": 0,
+            "net": 5.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 1,
+            "net": 3.75
+          }
+        ],
+        "totalNet": 79.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-4",
+        "scannedName": "RÜZGAR DURMAZ",
+        "matchedStudentId": "stu-52c39c5a47",
+        "studentNo": "759",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 5,
+            "blank": 4,
+            "net": 29.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 12,
+            "wrong": 7,
+            "blank": 21,
+            "net": 10.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 5,
+            "blank": 0,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 3,
+            "blank": 4,
+            "net": -0.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 3,
+            "net": 0.5
+          }
+        ],
+        "totalNet": 40.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-5",
+        "scannedName": "CEMRE SUNAY DOĞAN",
+        "matchedStudentId": "stu-43454d5245",
+        "studentNo": "408",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 9,
+            "blank": 4,
+            "net": 24.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 10,
+            "wrong": 9,
+            "blank": 21,
+            "net": 7.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 5,
+            "blank": 0,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 3,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 2,
+            "net": 0.25
+          }
+        ],
+        "totalNet": 45.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-6",
+        "scannedName": "BEYZA TEKNEOĞLU",
+        "matchedStudentId": "stu-4245595a41",
+        "studentNo": "256",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 4,
+            "blank": 1,
+            "net": 34
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 7,
+            "wrong": 3,
+            "blank": 30,
+            "net": 6.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 2,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 4,
+            "blank": 0,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 3,
+            "net": 1.75
+          }
+        ],
+        "totalNet": 60.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-7",
+        "scannedName": "KAYA BELGİN",
+        "matchedStudentId": "stu-4b41594120",
+        "studentNo": "198",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 1,
+            "blank": 4,
+            "net": 34.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 13,
+            "wrong": 11,
+            "blank": 16,
+            "net": 10.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 5,
+            "blank": 0,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 2,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 60.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-8",
+        "scannedName": "DORUKHAN UNCU",
+        "matchedStudentId": "stu-444f52554b",
+        "studentNo": "475",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 3,
+            "blank": 2,
+            "net": 34.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 17,
+            "wrong": 3,
+            "blank": 20,
+            "net": 16.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 0,
+            "net": 3.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 4,
+            "blank": 0,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 74.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-9",
+        "scannedName": "REŞAT EMRE ULUTÜRK",
+        "matchedStudentId": "stu-5245c59e41",
+        "studentNo": "545",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 8,
+            "blank": 0,
+            "net": 30
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 6,
+            "blank": 26,
+            "net": 6.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 2,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 2,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 1,
+            "net": 1.25
+          }
+        ],
+        "totalNet": 42,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-10",
+        "scannedName": "ONUR YILMAZ",
+        "matchedStudentId": "stu-4f4e555220",
+        "studentNo": "512",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 17,
+            "wrong": 1,
+            "blank": 22,
+            "net": 16.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 39,
+            "net": 1
+          }
+        ],
+        "totalNet": 20.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-11",
+        "scannedName": "KEMAL DEMİR",
+        "matchedStudentId": "stu-4b454d414c",
+        "studentNo": "506",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 5,
+            "blank": 2,
+            "net": 31.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 3,
+            "blank": 2,
+            "net": -0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 5,
+            "wrong": 4,
+            "blank": 31,
+            "net": 4
+          }
+        ],
+        "totalNet": 47.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825656-12",
+        "scannedName": "SELİM EMRE ADIGÜZEL",
+        "matchedStudentId": "stu-53454cc4b0",
+        "studentNo": "124",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 6,
+            "blank": 3,
+            "net": 29.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 1,
+            "blank": 33,
+            "net": 5.75
+          }
+        ],
+        "totalNet": 48.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-13",
+        "scannedName": "ESMA NAZ ADIGÜZEL",
+        "matchedStudentId": "stu-45534d4120",
+        "studentNo": "599",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 10,
+            "blank": 2,
+            "net": 25.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 4,
+            "blank": 1,
+            "net": -1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 33.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-14",
+        "scannedName": "BATUHAN YİĞİT",
+        "matchedStudentId": "stu-4241545548",
+        "studentNo": "693",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 5,
+            "blank": 0,
+            "net": 33.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 40,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-15",
+        "scannedName": "SEBASTIAN ALP YILDIZHAN",
+        "matchedStudentId": "stu-5345424153",
+        "studentNo": "",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 13,
+            "blank": 0,
+            "net": 23.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 36.75,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-16",
+        "scannedName": "İPEK BUMEN",
+        "matchedStudentId": "stu-c4b050454b",
+        "studentNo": "185",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 5,
+            "blank": 6,
+            "net": 27.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 36,
+            "net": 1.5
+          }
+        ],
+        "totalNet": 42.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-17",
+        "scannedName": "POYRAZ İSLAMOĞLU",
+        "matchedStudentId": "stu-504f595241",
+        "studentNo": "580",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 20,
+            "wrong": 9,
+            "blank": 11,
+            "net": 17.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 29.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-18",
+        "scannedName": "SUDE NAZ KOÇAL",
+        "matchedStudentId": "stu-5355444520",
+        "studentNo": "258",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 6,
+            "blank": 2,
+            "net": 30.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 35,
+            "net": 1.25
+          }
+        ],
+        "totalNet": 46.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-19",
+        "scannedName": "ÖMER FURKAN AKTAŞ",
+        "matchedStudentId": "stu-c3964d4552",
+        "studentNo": "532",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 6,
+            "blank": 9,
+            "net": 23.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 5,
+            "wrong": 2,
+            "blank": 33,
+            "net": 4.5
+          }
+        ],
+        "totalNet": 28,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-20",
+        "scannedName": "ELİF TÜREDİ",
+        "matchedStudentId": "stu-454cc4b046",
+        "studentNo": "293",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 7,
+            "blank": 0,
+            "net": 31.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 10,
+            "wrong": 5,
+            "blank": 25,
+            "net": 8.75
+          }
+        ],
+        "totalNet": 54,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-21",
+        "scannedName": "AHMET KUZEY KABOĞLU",
+        "matchedStudentId": "stu-41484d4554",
+        "studentNo": "933",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 8,
+            "blank": 3,
+            "net": 27
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 3,
+            "blank": 31,
+            "net": 5.25
+          }
+        ],
+        "totalNet": 38.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-22",
+        "scannedName": "ECRİN ŞENGÜL",
+        "matchedStudentId": "stu-454352c4b0",
+        "studentNo": "918",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 7,
+            "blank": 1,
+            "net": 30.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 36,
+            "net": 0.25
+          }
+        ],
+        "totalNet": 42.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792247825657-23",
+        "scannedName": "ECRİN DURU KANDEMİR",
+        "matchedStudentId": "stu-454352c4b0",
+        "studentNo": "962",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 7,
+            "blank": 1,
+            "net": 30.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 36,
+            "net": 0.25
+          }
+        ],
+        "totalNet": 38.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      }
+    ],
+    "isAnalyzed": true,
+    "isSaved": true
+  },
+  "TYT_2": {
+    "examNumber": 2,
+    "examType": "TYT",
+    "examTitle": "uğur TYT Deneme-2",
+    "examDate": "2026-09-25",
+    "image1": {
+      "id": "img-1792645005421-1",
+      "name": "PHOTO-2026-10-07-13-02-27 (5).jpg",
+      "previewUrl": "/uploads/exam_images/1792645005283_PHOTO-2026-10-07-13-02-27__5_.jpg",
+      "size": "184 KB"
+    },
+    "image2": {
+      "id": "img-1792645012349-2",
+      "name": "PHOTO-2026-10-07-13-03-06 (4).jpg",
+      "previewUrl": "/uploads/exam_images/1792645012220_PHOTO-2026-10-07-13-03-06__4_.jpg",
+      "size": "228 KB"
+    },
+    "parsedRows": [
+      {
+        "id": "row-1792645206820-0",
+        "scannedName": "ONUR YILMAZ",
+        "matchedStudentId": "stu-4f4e555220",
+        "studentNo": "512",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 4,
+            "wrong": 10,
+            "blank": 26,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 2,
+            "blank": 3,
+            "net": -0.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 2,
+            "blank": 3,
+            "net": -0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 2,
+            "blank": 3,
+            "net": -0.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": -0.25,
+        "prevTotalNet": 20.75,
+        "deltaTotalNet": -21,
+        "deltaTotalRate": -101.2,
+        "branchDeltas": {
+          "TYT Türkçe": -15.25,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -1.5,
+          "TYT Felsefe": -0.5,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": -1
+        },
+        "branchRates": {
+          "TYT Türkçe": -91,
+          "TYT Tarih": -125,
+          "TYT Coğrafya": -150,
+          "TYT Matematik": -100
+        }
+      },
+      {
+        "id": "row-1792645206821-1",
+        "scannedName": "ENİS ÇETİN",
+        "matchedStudentId": "stu-454ec4b053",
+        "studentNo": "344",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 5,
+            "blank": 0,
+            "net": 33.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 9,
+            "wrong": 7,
+            "blank": 24,
+            "net": 7.25
+          }
+        ],
+        "totalNet": 50.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206822-2",
+        "scannedName": "KEMAL DEMİR",
+        "matchedStudentId": "stu-4b454d414c",
+        "studentNo": "506",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 9,
+            "blank": 2,
+            "net": 26.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 0,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 4,
+            "blank": 33,
+            "net": 2
+          }
+        ],
+        "totalNet": 35.5,
+        "prevTotalNet": 47.5,
+        "deltaTotalNet": -12,
+        "deltaTotalRate": -25.3,
+        "branchDeltas": {
+          "TYT Türkçe": -5,
+          "TYT Tarih": -3.75,
+          "TYT Coğrafya": 1,
+          "TYT Felsefe": -2.25,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": -2
+        },
+        "branchRates": {
+          "TYT Türkçe": -15.7,
+          "TYT Tarih": -100,
+          "TYT Felsefe": -45,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": -50
+        }
+      },
+      {
+        "id": "row-1792645206822-3",
+        "scannedName": "SELİM EMRE ADIGÜZEL",
+        "matchedStudentId": "stu-53454cc4b0",
+        "studentNo": "124",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 22,
+            "wrong": 10,
+            "blank": 8,
+            "net": 19.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 7,
+            "wrong": 4,
+            "blank": 29,
+            "net": 6
+          }
+        ],
+        "totalNet": 33.75,
+        "prevTotalNet": 48.5,
+        "deltaTotalNet": -14.75,
+        "deltaTotalRate": -30.4,
+        "branchDeltas": {
+          "TYT Türkçe": -10,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": -3.75,
+          "TYT Din Kültürü": 1.5,
+          "TYT Matematik": 0.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -33.9,
+          "TYT Tarih": -50,
+          "TYT Coğrafya": -12.5,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": 60,
+          "TYT Matematik": 4.3
+        }
+      },
+      {
+        "id": "row-1792645206822-4",
+        "scannedName": "ESMA NAZ ADIGÜZEL",
+        "matchedStudentId": "stu-45534d4120",
+        "studentNo": "599",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 11,
+            "blank": 1,
+            "net": 25.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 0,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 34,
+        "prevTotalNet": 33.75,
+        "deltaTotalNet": 0.25,
+        "deltaTotalRate": 0.7,
+        "branchDeltas": {
+          "TYT Türkçe": -0.25,
+          "TYT Tarih": -3.75,
+          "TYT Coğrafya": 2,
+          "TYT Felsefe": 1,
+          "TYT Din Kültürü": 1.25,
+          "TYT Matematik": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -1,
+          "TYT Tarih": -100,
+          "TYT Felsefe": 25,
+          "TYT Din Kültürü": 83.3
+        }
+      },
+      {
+        "id": "row-1792645206823-5",
+        "scannedName": "BATUHAN YİĞİT",
+        "matchedStudentId": "stu-4241545548",
+        "studentNo": "693",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 34,
+            "wrong": 6,
+            "blank": 0,
+            "net": 32.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 3,
+            "blank": 2,
+            "net": -0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 10,
+            "wrong": 2,
+            "blank": 28,
+            "net": 9.5
+          }
+        ],
+        "totalNet": 51.5,
+        "prevTotalNet": 40,
+        "deltaTotalNet": 11.5,
+        "deltaTotalRate": 28.7,
+        "branchDeltas": {
+          "TYT Türkçe": -1.25,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -2,
+          "TYT Felsefe": 4,
+          "TYT Din Kültürü": 3.75,
+          "TYT Matematik": 9.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -3.7,
+          "TYT Tarih": -50,
+          "TYT Coğrafya": -160
+        }
+      },
+      {
+        "id": "row-1792645206823-6",
+        "scannedName": "SEBASTIAN ALP YILDIZHAN",
+        "matchedStudentId": "stu-5345424153",
+        "studentNo": "447",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 7,
+            "blank": 0,
+            "net": 31.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 35,
+            "net": 2.5
+          }
+        ],
+        "totalNet": 40.5,
+        "prevTotalNet": 36.75,
+        "deltaTotalNet": 3.75,
+        "deltaTotalRate": 10.2,
+        "branchDeltas": {
+          "TYT Türkçe": 7.5,
+          "TYT Tarih": -3.75,
+          "TYT Coğrafya": -2.5,
+          "TYT Felsefe": -1,
+          "TYT Din Kültürü": 1,
+          "TYT Matematik": 2.5
+        },
+        "branchRates": {
+          "TYT Türkçe": 31.6,
+          "TYT Tarih": -75,
+          "TYT Coğrafya": -90.9,
+          "TYT Felsefe": -40,
+          "TYT Din Kültürü": 36.4
+        }
+      },
+      {
+        "id": "row-1792645206823-7",
+        "scannedName": "İPEK BUMEN",
+        "matchedStudentId": "stu-c4b050454b",
+        "studentNo": "185",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 8,
+            "blank": 4,
+            "net": 26
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 5,
+            "blank": 29,
+            "net": 4.75
+          }
+        ],
+        "totalNet": 43.75,
+        "prevTotalNet": 42.5,
+        "deltaTotalNet": 1.25,
+        "deltaTotalRate": 2.9,
+        "branchDeltas": {
+          "TYT Türkçe": -1.75,
+          "TYT Tarih": -0.25,
+          "TYT Coğrafya": -1.25,
+          "TYT Felsefe": -1.25,
+          "TYT Din Kültürü": 2.5,
+          "TYT Matematik": 3.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -6.3,
+          "TYT Tarih": -6.3,
+          "TYT Coğrafya": -41.7,
+          "TYT Felsefe": -33.3,
+          "TYT Din Kültürü": 100,
+          "TYT Matematik": 216.7
+        }
+      },
+      {
+        "id": "row-1792645206824-8",
+        "scannedName": "POYRAZ İSLAMOĞLU",
+        "matchedStudentId": "stu-504f595241",
+        "studentNo": "580",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 17,
+            "wrong": 11,
+            "blank": 12,
+            "net": 14.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 16.25,
+        "prevTotalNet": 29.25,
+        "deltaTotalNet": -13,
+        "deltaTotalRate": -44.4,
+        "branchDeltas": {
+          "TYT Türkçe": -3.5,
+          "TYT Tarih": -3.75,
+          "TYT Coğrafya": -1,
+          "TYT Felsefe": -1.75,
+          "TYT Din Kültürü": -3,
+          "TYT Matematik": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -19.7,
+          "TYT Tarih": -75,
+          "TYT Coğrafya": -57.1,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": -100
+        }
+      },
+      {
+        "id": "row-1792645206824-9",
+        "scannedName": "BERK KUZEY ALACALI",
+        "matchedStudentId": "stu-4245524b20",
+        "studentNo": "933",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [],
+        "totalNet": 0,
+        "prevTotalNet": 38.5,
+        "deltaTotalNet": -38.5,
+        "deltaTotalRate": -100,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206825-10",
+        "scannedName": "SUDE NAZ KOÇAL",
+        "matchedStudentId": "stu-5355444520",
+        "studentNo": "",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 6,
+            "blank": 3,
+            "net": 29.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 1,
+            "blank": 31,
+            "net": 7.75
+          }
+        ],
+        "totalNet": 44.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206825-11",
+        "scannedName": "ÖMER FURKAN AKTAŞ",
+        "matchedStudentId": "stu-c3964d4552",
+        "studentNo": "532",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 5,
+            "blank": 32,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 8,
+            "blank": 29,
+            "net": 1
+          }
+        ],
+        "totalNet": 2.75,
+        "prevTotalNet": 28,
+        "deltaTotalNet": -25.25,
+        "deltaTotalRate": -90.2,
+        "branchDeltas": {
+          "TYT Türkçe": -21.75,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": -3.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -92.6,
+          "TYT Matematik": -77.8
+        }
+      },
+      {
+        "id": "row-1792645206825-12",
+        "scannedName": "ELİF TÜREDİ",
+        "matchedStudentId": "stu-454cc4b046",
+        "studentNo": "293",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 30,
+            "wrong": 6,
+            "blank": 4,
+            "net": 28.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 12,
+            "wrong": 7,
+            "blank": 21,
+            "net": 10.25
+          }
+        ],
+        "totalNet": 47,
+        "prevTotalNet": 54,
+        "deltaTotalNet": -7,
+        "deltaTotalRate": -13,
+        "branchDeltas": {
+          "TYT Türkçe": -2.75,
+          "TYT Tarih": -3.75,
+          "TYT Coğrafya": -1,
+          "TYT Felsefe": -1,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 1.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -8.8,
+          "TYT Tarih": -75,
+          "TYT Coğrafya": -66.7,
+          "TYT Felsefe": -26.7,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 17.1
+        }
+      },
+      {
+        "id": "row-1792645206826-13",
+        "scannedName": "AHMET KUZEY KABOĞLU",
+        "matchedStudentId": "stu-41484d4554",
+        "studentNo": "933",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 7,
+            "blank": 6,
+            "net": 25.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 14,
+            "wrong": 5,
+            "blank": 21,
+            "net": 12.75
+          }
+        ],
+        "totalNet": 42.25,
+        "prevTotalNet": 38.5,
+        "deltaTotalNet": 3.75,
+        "deltaTotalRate": 9.7,
+        "branchDeltas": {
+          "TYT Türkçe": -1.75,
+          "TYT Tarih": -1.25,
+          "TYT Coğrafya": -1.75,
+          "TYT Felsefe": 1,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 7.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -6.5,
+          "TYT Tarih": -33.3,
+          "TYT Coğrafya": -70,
+          "TYT Matematik": 142.9
+        }
+      },
+      {
+        "id": "row-1792645206826-14",
+        "scannedName": "KAAN USTA",
+        "matchedStudentId": "stu-4b41414e20",
+        "studentNo": "521",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 5,
+            "blank": 7,
+            "net": 26.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 0,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 3,
+            "blank": 6,
+            "net": 30.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 7,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 7,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 6,
+            "net": 0
+          }
+        ],
+        "totalNet": 61.75,
+        "prevTotalNet": 59.75,
+        "deltaTotalNet": 2,
+        "deltaTotalRate": 3.3,
+        "branchDeltas": {
+          "TYT Türkçe": -3.25,
+          "TYT Tarih": -4,
+          "TYT Coğrafya": -0.5,
+          "TYT Felsefe": -5,
+          "TYT Din Kültürü": 1,
+          "TYT Matematik": 15.75,
+          "TYT Fizik": -1.25,
+          "TYT Kimya": -0.75,
+          "TYT Biyoloji": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -10.8,
+          "TYT Tarih": -100,
+          "TYT Coğrafya": -200,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": 25,
+          "TYT Matematik": 108.6,
+          "TYT Fizik": -100,
+          "TYT Kimya": -100
+        }
+      },
+      {
+        "id": "row-1792645206826-15",
+        "scannedName": "DAMLASU YILDIRIM",
+        "matchedStudentId": "stu-44414d4c41",
+        "studentNo": "260",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 9,
+            "blank": 4,
+            "net": 24.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 16,
+            "wrong": 5,
+            "blank": 19,
+            "net": 14.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 1,
+            "net": 2.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 1,
+            "net": 3.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 53.75,
+        "prevTotalNet": 60,
+        "deltaTotalNet": -6.25,
+        "deltaTotalRate": -10.4,
+        "branchDeltas": {
+          "TYT Türkçe": -6,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -0.75,
+          "TYT Felsefe": -1.5,
+          "TYT Din Kültürü": 1,
+          "TYT Matematik": 5,
+          "TYT Fizik": -1,
+          "TYT Kimya": -1.25,
+          "TYT Biyoloji": 0.75
+        },
+        "branchRates": {
+          "TYT Türkçe": -19.5,
+          "TYT Tarih": -62.5,
+          "TYT Coğrafya": -150,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": 36.4,
+          "TYT Matematik": 51.3,
+          "TYT Fizik": -30.8,
+          "TYT Kimya": -26.3,
+          "TYT Biyoloji": 27.3
+        }
+      },
+      {
+        "id": "row-1792645206827-16",
+        "scannedName": "YUSUF MUHAMMED ŞEN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "726",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 2,
+            "blank": 3,
+            "net": 34.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 6,
+            "blank": 7,
+            "net": 25.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 1,
+            "net": 3.5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 6,
+            "wrong": 0,
+            "blank": 0,
+            "net": 6
+          }
+        ],
+        "totalNet": 80.5,
+        "prevTotalNet": 84.25,
+        "deltaTotalNet": -3.75,
+        "deltaTotalRate": -4.5,
+        "branchDeltas": {
+          "TYT Türkçe": -2.25,
+          "TYT Tarih": -3.5,
+          "TYT Coğrafya": -1,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": 1.25,
+          "TYT Fizik": -1,
+          "TYT Kimya": 2,
+          "TYT Biyoloji": 1
+        },
+        "branchRates": {
+          "TYT Türkçe": -6.1,
+          "TYT Tarih": -70,
+          "TYT Coğrafya": -50,
+          "TYT Din Kültürü": -6.3,
+          "TYT Matematik": 5.2,
+          "TYT Fizik": -22.2,
+          "TYT Kimya": 72.7,
+          "TYT Biyoloji": 20
+        }
+      },
+      {
+        "id": "row-1792645206828-17",
+        "scannedName": "YUSUF EREN DOĞAN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "170",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 8,
+            "blank": 1,
+            "net": 29
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 34,
+            "wrong": 5,
+            "blank": 1,
+            "net": 32.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 2,
+            "blank": 0,
+            "net": 4.5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 0,
+            "net": 3.25
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 6,
+            "wrong": 0,
+            "blank": 0,
+            "net": 6
+          }
+        ],
+        "totalNet": 84.75,
+        "prevTotalNet": 79.75,
+        "deltaTotalNet": 5,
+        "deltaTotalRate": 6.3,
+        "branchDeltas": {
+          "TYT Türkçe": -2.5,
+          "TYT Tarih": -0.25,
+          "TYT Coğrafya": -1.5,
+          "TYT Felsefe": 1.25,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 9.5,
+          "TYT Fizik": -1.25,
+          "TYT Kimya": -2.5,
+          "TYT Biyoloji": 2.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -7.9,
+          "TYT Tarih": -6.3,
+          "TYT Coğrafya": -50,
+          "TYT Felsefe": 166.7,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 40.9,
+          "TYT Fizik": -21.7,
+          "TYT Kimya": -43.5,
+          "TYT Biyoloji": 60
+        }
+      },
+      {
+        "id": "row-1792645206828-18",
+        "scannedName": "RÜZGAR DURMAZ",
+        "matchedStudentId": "stu-52c39c5a47",
+        "studentNo": "759",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 9,
+            "blank": 2,
+            "net": 26.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 11,
+            "wrong": 14,
+            "blank": 15,
+            "net": 7.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 4,
+            "blank": 0,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 3,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 0,
+            "net": 2.25
+          }
+        ],
+        "totalNet": 47.75,
+        "prevTotalNet": 40.5,
+        "deltaTotalNet": 7.25,
+        "deltaTotalRate": 17.9,
+        "branchDeltas": {
+          "TYT Türkçe": -3,
+          "TYT Tarih": 2.5,
+          "TYT Coğrafya": 1,
+          "TYT Felsefe": 2.75,
+          "TYT Din Kültürü": 1.5,
+          "TYT Matematik": -2.75,
+          "TYT Fizik": 1.25,
+          "TYT Kimya": 2.25,
+          "TYT Biyoloji": 1.75
+        },
+        "branchRates": {
+          "TYT Türkçe": -10.1,
+          "TYT Matematik": -26.8,
+          "TYT Fizik": 166.7,
+          "TYT Biyoloji": 350
+        }
+      },
+      {
+        "id": "row-1792645206828-19",
+        "scannedName": "CEMRE SUNAY DOĞAN",
+        "matchedStudentId": "stu-43454d5245",
+        "studentNo": "408",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 23,
+            "wrong": 14,
+            "blank": 3,
+            "net": 19.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 11,
+            "wrong": 7,
+            "blank": 22,
+            "net": 9.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 4,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 3,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 0,
+            "net": 2.25
+          }
+        ],
+        "totalNet": 36.75,
+        "prevTotalNet": 45.5,
+        "deltaTotalNet": -8.75,
+        "deltaTotalRate": -19.2,
+        "branchDeltas": {
+          "TYT Türkçe": -5.25,
+          "TYT Tarih": 1.5,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": -3,
+          "TYT Din Kültürü": -4,
+          "TYT Matematik": 1.5,
+          "TYT Fizik": 1,
+          "TYT Kimya": -2.5,
+          "TYT Biyoloji": 2
+        },
+        "branchRates": {
+          "TYT Türkçe": -21.2,
+          "TYT Tarih": 100,
+          "TYT Felsefe": -80,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": 19.4,
+          "TYT Fizik": 133.3,
+          "TYT Kimya": -90.9,
+          "TYT Biyoloji": 800
+        }
+      },
+      {
+        "id": "row-1792645206829-20",
+        "scannedName": "BEYZA TEKNEOĞLU",
+        "matchedStudentId": "stu-4245595a41",
+        "studentNo": "256",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 5,
+            "blank": 0,
+            "net": 33.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 9,
+            "wrong": 3,
+            "blank": 28,
+            "net": 8.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 2,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 2,
+            "blank": 0,
+            "net": 4.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 6,
+            "wrong": 0,
+            "blank": 0,
+            "net": 6
+          }
+        ],
+        "totalNet": 60.25,
+        "prevTotalNet": 60.75,
+        "deltaTotalNet": -0.5,
+        "deltaTotalRate": -0.8,
+        "branchDeltas": {
+          "TYT Türkçe": -0.25,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": -1,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": 2,
+          "TYT Fizik": -5,
+          "TYT Kimya": 2.5,
+          "TYT Biyoloji": 4.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -0.7,
+          "TYT Tarih": -62.5,
+          "TYT Felsefe": -26.7,
+          "TYT Din Kültürü": -6.3,
+          "TYT Matematik": 32,
+          "TYT Fizik": -100,
+          "TYT Kimya": 125,
+          "TYT Biyoloji": 242.9
+        }
+      },
+      {
+        "id": "row-1792645206829-21",
+        "scannedName": "ALARA HANDE ORHAN",
+        "matchedStudentId": "stu-414c415241",
+        "studentNo": "432",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 34,
+            "wrong": 4,
+            "blank": 2,
+            "net": 33
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 21,
+            "wrong": 8,
+            "blank": 11,
+            "net": 19
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 2,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 4,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 1,
+            "net": 5
+          }
+        ],
+        "totalNet": 70.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206829-22",
+        "scannedName": "KAYA BELGİN",
+        "matchedStudentId": "stu-4b41594120",
+        "studentNo": "198",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 34,
+            "wrong": 6,
+            "blank": 0,
+            "net": 32.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 16,
+            "wrong": 4,
+            "blank": 20,
+            "net": 15
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 5,
+            "blank": 0,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 2,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 0,
+            "net": 4.75
+          }
+        ],
+        "totalNet": 63.75,
+        "prevTotalNet": 60.25,
+        "deltaTotalNet": 3.5,
+        "deltaTotalRate": 5.8,
+        "branchDeltas": {
+          "TYT Türkçe": -2.25,
+          "TYT Tarih": -1.5,
+          "TYT Coğrafya": -1.75,
+          "TYT Felsefe": -0.75,
+          "TYT Din Kültürü": 1.25,
+          "TYT Matematik": 4.75,
+          "TYT Fizik": 0,
+          "TYT Kimya": 2.5,
+          "TYT Biyoloji": 1.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -6.5,
+          "TYT Tarih": -37.5,
+          "TYT Coğrafya": -70,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": 33.3,
+          "TYT Matematik": 46.3,
+          "TYT Fizik": 0,
+          "TYT Biyoloji": 35.7
+        }
+      },
+      {
+        "id": "row-1792645206829-23",
+        "scannedName": "ALİ HÜR YILDIRIM",
+        "matchedStudentId": "stu-414cc4b020",
+        "studentNo": "150",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206829-24",
+        "scannedName": "DORUKHAN UNCU",
+        "matchedStudentId": "stu-444f52554b",
+        "studentNo": "475",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 6,
+            "blank": 1,
+            "net": 31.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 4,
+            "blank": 11,
+            "net": 24
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 0,
+            "net": 3.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 6,
+            "wrong": 1,
+            "blank": 0,
+            "net": 5.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 78.75,
+        "prevTotalNet": 74.5,
+        "deltaTotalNet": 4.25,
+        "deltaTotalRate": 5.7,
+        "branchDeltas": {
+          "TYT Türkçe": -2.75,
+          "TYT Tarih": -1.5,
+          "TYT Coğrafya": 0.75,
+          "TYT Felsefe": -1.25,
+          "TYT Din Kültürü": -2.5,
+          "TYT Matematik": 7.75,
+          "TYT Fizik": 0,
+          "TYT Kimya": 3.75,
+          "TYT Biyoloji": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -8,
+          "TYT Tarih": -37.5,
+          "TYT Coğrafya": 60,
+          "TYT Felsefe": -25,
+          "TYT Din Kültürü": -50,
+          "TYT Matematik": 47.7,
+          "TYT Fizik": 0,
+          "TYT Kimya": 187.5,
+          "TYT Biyoloji": 0
+        }
+      },
+      {
+        "id": "row-1792645206829-25",
+        "scannedName": "KORAY AREL BAYGÖL",
+        "matchedStudentId": "stu-4b4f524159",
+        "studentNo": "915",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206829-26",
+        "scannedName": "OLCAY MALİK MUSTAFA EMİR",
+        "matchedStudentId": "stu-4f4c434159",
+        "studentNo": "405",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206829-27",
+        "scannedName": "ONUR CAN İLHAN",
+        "matchedStudentId": "stu-4f4e555220",
+        "studentNo": "512",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "prevTotalNet": 20.75,
+        "deltaTotalNet": -20.75,
+        "deltaTotalRate": -100,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645206829-28",
+        "scannedName": "REŞAT EMRE ULUTÜRK",
+        "matchedStudentId": "stu-5245c59e41",
+        "studentNo": "545",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 8,
+            "blank": 0,
+            "net": 30
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 10,
+            "blank": 24,
+            "net": 3.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 7,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 7,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 6,
+            "net": 0
+          }
+        ],
+        "totalNet": 33.5,
+        "prevTotalNet": 42,
+        "deltaTotalNet": -8.5,
+        "deltaTotalRate": -20.2,
+        "branchDeltas": {
+          "TYT Türkçe": 0,
+          "TYT Tarih": -3,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": -3,
+          "TYT Fizik": -1.25,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -1.25
+        },
+        "branchRates": {
+          "TYT Türkçe": 0,
+          "TYT Tarih": -100,
+          "TYT Matematik": -46.2,
+          "TYT Fizik": -100,
+          "TYT Biyoloji": -100
+        }
+      }
+    ],
+    "isAnalyzed": true,
+    "isSaved": true
+  },
+  "TYT_3": {
+    "examNumber": 3,
+    "examType": "TYT",
+    "examTitle": "2026 Türkiye Geneli TYT Deneme-3",
+    "examDate": "2026-10-09",
+    "image1": {
+      "id": "img-1792645426150-1",
+      "name": "PHOTO-2026-10-12-15-09-47.jpg",
+      "previewUrl": "/uploads/exam_images/1792645426023_PHOTO-2026-10-12-15-09-47.jpg",
+      "size": "288 KB"
+    },
+    "image2": {
+      "id": "img-1792645511498-2",
+      "name": "PHOTO-2026-10-12-15-09-48.jpg",
+      "previewUrl": "/uploads/exam_images/1792645511353_PHOTO-2026-10-12-15-09-48.jpg",
+      "size": "230 KB"
+    },
+    "parsedRows": [
+      {
+        "id": "row-1792645769112-0",
+        "scannedName": "ONUR YILMAZ",
+        "matchedStudentId": "stu-4f4e555220",
+        "studentNo": "512",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 18,
+            "wrong": 9,
+            "blank": 13,
+            "net": 15.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 2,
+            "blank": 3,
+            "net": -0.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 33,
+            "net": 3.25
+          }
+        ],
+        "totalNet": 21.25,
+        "prevTotalNet": 0,
+        "deltaTotalNet": 21.25,
+        "branchDeltas": {
+          "TYT Türkçe": 15.75,
+          "TYT Tarih": 3,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": -0.5,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 3.25
+        },
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769112-1",
+        "scannedName": "ENİS ÇETİN",
+        "matchedStudentId": "stu-454ec4b053",
+        "studentNo": "344",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 6,
+            "blank": 1,
+            "net": 31.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 11,
+            "wrong": 4,
+            "blank": 25,
+            "net": 10
+          }
+        ],
+        "totalNet": 54,
+        "prevTotalNet": 50.25,
+        "deltaTotalNet": 3.75,
+        "deltaTotalRate": 7.5,
+        "branchDeltas": {
+          "TYT Türkçe": -2.25,
+          "TYT Tarih": 2.5,
+          "TYT Coğrafya": 2,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -1.25,
+          "TYT Matematik": 2.75
+        },
+        "branchRates": {
+          "TYT Türkçe": -6.7,
+          "TYT Tarih": 200,
+          "TYT Coğrafya": 400,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -33.3,
+          "TYT Matematik": 37.9
+        }
+      },
+      {
+        "id": "row-1792645769112-2",
+        "scannedName": "KEMAL DEMİR",
+        "matchedStudentId": "stu-4b454d414c",
+        "studentNo": "506",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 30,
+            "wrong": 9,
+            "blank": 1,
+            "net": 27.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 4,
+            "blank": 1,
+            "net": -1
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 0,
+            "blank": 34,
+            "net": 6
+          }
+        ],
+        "totalNet": 40.25,
+        "prevTotalNet": 35.5,
+        "deltaTotalNet": 4.75,
+        "deltaTotalRate": 13.4,
+        "branchDeltas": {
+          "TYT Türkçe": 1,
+          "TYT Tarih": 1.25,
+          "TYT Coğrafya": -1.25,
+          "TYT Felsefe": 1,
+          "TYT Din Kültürü": -1.25,
+          "TYT Matematik": 4
+        },
+        "branchRates": {
+          "TYT Türkçe": 3.7,
+          "TYT Coğrafya": -500,
+          "TYT Felsefe": 36.4,
+          "TYT Din Kültürü": -33.3,
+          "TYT Matematik": 200
+        }
+      },
+      {
+        "id": "row-1792645769112-3",
+        "scannedName": "SELİM EMRE ADIGÜZEL",
+        "matchedStudentId": "stu-53454cc4b0",
+        "studentNo": "124",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 10,
+            "blank": 3,
+            "net": 24.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 7,
+            "blank": 30,
+            "net": 1.25
+          }
+        ],
+        "totalNet": 36.25,
+        "prevTotalNet": 33.75,
+        "deltaTotalNet": 2.5,
+        "deltaTotalRate": 7.4,
+        "branchDeltas": {
+          "TYT Türkçe": 5,
+          "TYT Tarih": -1.25,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": 4,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": -4.75
+        },
+        "branchRates": {
+          "TYT Türkçe": 25.6,
+          "TYT Tarih": -50,
+          "TYT Coğrafya": -14.3,
+          "TYT Din Kültürü": -6.3,
+          "TYT Matematik": -79.2
+        }
+      },
+      {
+        "id": "row-1792645769112-4",
+        "scannedName": "ESMA NAZ ADIGÜZEL",
+        "matchedStudentId": "stu-45534d4120",
+        "studentNo": "599",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 13,
+            "blank": 2,
+            "net": 21.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 38,
+            "net": 2
+          }
+        ],
+        "totalNet": 27.25,
+        "prevTotalNet": 34,
+        "deltaTotalNet": -6.75,
+        "deltaTotalRate": -19.9,
+        "branchDeltas": {
+          "TYT Türkçe": -3.5,
+          "TYT Tarih": 0.25,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": -4.25,
+          "TYT Din Kültürü": -1,
+          "TYT Matematik": 2
+        },
+        "branchRates": {
+          "TYT Türkçe": -13.9,
+          "TYT Coğrafya": -25,
+          "TYT Felsefe": -85,
+          "TYT Din Kültürü": -36.4
+        }
+      },
+      {
+        "id": "row-1792645769112-5",
+        "scannedName": "BATUHAN YİĞİT",
+        "matchedStudentId": "stu-4241545548",
+        "studentNo": "693",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 35,
+            "wrong": 5,
+            "blank": 0,
+            "net": 33.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 40,
+        "prevTotalNet": 51.5,
+        "deltaTotalNet": -11.5,
+        "deltaTotalRate": -22.3,
+        "branchDeltas": {
+          "TYT Türkçe": 1.25,
+          "TYT Tarih": 2.5,
+          "TYT Coğrafya": 2,
+          "TYT Felsefe": -4,
+          "TYT Din Kültürü": -3.75,
+          "TYT Matematik": -9.5
+        },
+        "branchRates": {
+          "TYT Türkçe": 3.8,
+          "TYT Tarih": 100,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": -100
+        }
+      },
+      {
+        "id": "row-1792645769112-6",
+        "scannedName": "SEBASTIAN ALP YILDIZHAN",
+        "matchedStudentId": "stu-5345424153",
+        "studentNo": "447",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 12,
+            "blank": 1,
+            "net": 24
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 31.75,
+        "prevTotalNet": 40.5,
+        "deltaTotalNet": -8.75,
+        "deltaTotalRate": -21.6,
+        "branchDeltas": {
+          "TYT Türkçe": -7.25,
+          "TYT Tarih": 1.25,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 2.25,
+          "TYT Din Kültürü": -2.5,
+          "TYT Matematik": -2.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -23.2,
+          "TYT Tarih": 100,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 150,
+          "TYT Din Kültürü": -66.7,
+          "TYT Matematik": -100
+        }
+      },
+      {
+        "id": "row-1792645769112-7",
+        "scannedName": "İPEK BUMEN",
+        "matchedStudentId": "stu-c4b050454b",
+        "studentNo": "185",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 6,
+            "blank": 5,
+            "net": 27.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 1,
+            "blank": 31,
+            "net": 7.75
+          }
+        ],
+        "totalNet": 45.75,
+        "prevTotalNet": 43.75,
+        "deltaTotalNet": 2,
+        "deltaTotalRate": 4.6,
+        "branchDeltas": {
+          "TYT Türkçe": 1.5,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -1.25,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -1.25,
+          "TYT Matematik": 3
+        },
+        "branchRates": {
+          "TYT Türkçe": 5.8,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -71.4,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -25,
+          "TYT Matematik": 63.2
+        }
+      },
+      {
+        "id": "row-1792645769112-8",
+        "scannedName": "POYRAZ İSLAMOĞLU",
+        "matchedStudentId": "stu-504f595241",
+        "studentNo": "580",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 17,
+            "wrong": 18,
+            "blank": 5,
+            "net": 12.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 20.5,
+        "prevTotalNet": 16.25,
+        "deltaTotalNet": 4.25,
+        "deltaTotalRate": 26.2,
+        "branchDeltas": {
+          "TYT Türkçe": -1.75,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": 1,
+          "TYT Felsefe": 2,
+          "TYT Din Kültürü": 3,
+          "TYT Matematik": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -12.3,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": 133.3
+        }
+      },
+      {
+        "id": "row-1792645769112-9",
+        "scannedName": "BERK KUZEY ALACALI",
+        "matchedStudentId": "stu-4245524b20",
+        "studentNo": "933",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 0,
+        "prevTotalNet": 42.25,
+        "deltaTotalNet": -42.25,
+        "deltaTotalRate": -100,
+        "branchDeltas": {
+          "TYT Matematik": -12.75
+        },
+        "branchRates": {
+          "TYT Matematik": -100
+        }
+      },
+      {
+        "id": "row-1792645769112-10",
+        "scannedName": "SUDE NAZ KOÇAL",
+        "matchedStudentId": "stu-5355444520",
+        "studentNo": "734",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 7,
+            "blank": 1,
+            "net": 30.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 0,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 2,
+            "wrong": 4,
+            "blank": 34,
+            "net": 1
+          }
+        ],
+        "totalNet": 38.5,
+        "prevTotalNet": 44.25,
+        "deltaTotalNet": -5.75,
+        "deltaTotalRate": -13,
+        "branchDeltas": {
+          "TYT Türkçe": 0.75,
+          "TYT Tarih": -1.25,
+          "TYT Coğrafya": 0.25,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 1.25,
+          "TYT Matematik": -6.75
+        },
+        "branchRates": {
+          "TYT Türkçe": 2.5,
+          "TYT Tarih": -50,
+          "TYT Coğrafya": 50,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 50,
+          "TYT Matematik": -87.1
+        }
+      },
+      {
+        "id": "row-1792645769112-11",
+        "scannedName": "ÖMER FURKAN AKTAŞ",
+        "matchedStudentId": "stu-c3964d4552",
+        "studentNo": "532",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 18,
+            "wrong": 9,
+            "blank": 13,
+            "net": 15.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 0,
+            "blank": 2,
+            "net": 3
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 13,
+            "wrong": 6,
+            "blank": 21,
+            "net": 11.5
+          }
+        ],
+        "totalNet": 30.25,
+        "prevTotalNet": 2.75,
+        "deltaTotalNet": 27.5,
+        "deltaTotalRate": 1000,
+        "branchDeltas": {
+          "TYT Türkçe": 14,
+          "TYT Tarih": 3,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 10.5
+        },
+        "branchRates": {
+          "TYT Türkçe": 800,
+          "TYT Matematik": 1050
+        }
+      },
+      {
+        "id": "row-1792645769112-12",
+        "scannedName": "ELİF TÜREDİ",
+        "matchedStudentId": "stu-454cc4b046",
+        "studentNo": "293",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 10,
+            "blank": 1,
+            "net": 26.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 5,
+            "blank": 0,
+            "net": -1.25
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 2,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 13,
+            "wrong": 6,
+            "blank": 21,
+            "net": 11.5
+          }
+        ],
+        "totalNet": 44.75,
+        "prevTotalNet": 47,
+        "deltaTotalNet": -2.25,
+        "deltaTotalRate": -4.8,
+        "branchDeltas": {
+          "TYT Türkçe": -2,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 1,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 1.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -7,
+          "TYT Tarih": -200,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 36.4,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 12.2
+        }
+      },
+      {
+        "id": "row-1792645769113-13",
+        "scannedName": "AHMET KUZEY KABOĞLU",
+        "matchedStudentId": "stu-41484d4554",
+        "studentNo": "933",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 10,
+            "blank": 2,
+            "net": 25.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 6,
+            "wrong": 5,
+            "blank": 29,
+            "net": 4.75
+          }
+        ],
+        "totalNet": 44.25,
+        "prevTotalNet": 42.25,
+        "deltaTotalNet": 2,
+        "deltaTotalRate": 4.7,
+        "branchDeltas": {
+          "TYT Türkçe": 0.25,
+          "TYT Tarih": 1.25,
+          "TYT Coğrafya": 2,
+          "TYT Felsefe": 1.5,
+          "TYT Din Kültürü": 5,
+          "TYT Matematik": -8
+        },
+        "branchRates": {
+          "TYT Türkçe": 1,
+          "TYT Tarih": 50,
+          "TYT Coğrafya": 266.7,
+          "TYT Felsefe": 150,
+          "TYT Matematik": -62.7
+        }
+      },
+      {
+        "id": "row-1792645769113-14",
+        "scannedName": "ECRİN ŞENGÜL",
+        "matchedStudentId": "stu-454352c4b0",
+        "studentNo": "918",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 13,
+            "blank": 2,
+            "net": 21.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 36,
+            "net": 0.25
+          }
+        ],
+        "totalNet": 32.75,
+        "prevTotalNet": 42.25,
+        "deltaTotalNet": -9.5,
+        "deltaTotalRate": -22.5,
+        "branchDeltas": {
+          "TYT Türkçe": -8.5,
+          "TYT Tarih": -3.5,
+          "TYT Coğrafya": 1.5,
+          "TYT Felsefe": 1.25,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -28.1,
+          "TYT Tarih": -70,
+          "TYT Coğrafya": 600,
+          "TYT Felsefe": 50,
+          "TYT Din Kültürü": -6.3,
+          "TYT Matematik": 0
+        }
+      },
+      {
+        "id": "row-1792645769113-15",
+        "scannedName": "ECRİN DURU KANDEMİR",
+        "matchedStudentId": "stu-454352c4b0",
+        "studentNo": "962",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 30,
+            "wrong": 9,
+            "blank": 1,
+            "net": 27.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 0,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 33,
+            "net": 3.25
+          }
+        ],
+        "totalNet": 40,
+        "prevTotalNet": 38.5,
+        "deltaTotalNet": 1.5,
+        "deltaTotalRate": 3.9,
+        "branchDeltas": {
+          "TYT Türkçe": -2.5,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": 1.25,
+          "TYT Felsefe": 2.5,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": 3
+        },
+        "branchRates": {
+          "TYT Türkçe": -8.3,
+          "TYT Tarih": -100,
+          "TYT Coğrafya": 500,
+          "TYT Felsefe": 200,
+          "TYT Din Kültürü": -6.3,
+          "TYT Matematik": 1200
+        }
+      },
+      {
+        "id": "row-1792645769113-16",
+        "scannedName": "ENES ARDA KESER",
+        "matchedStudentId": "stu-454e455320",
+        "studentNo": "",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 2,
+            "blank": 30,
+            "net": 7.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 9,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769113-17",
+        "scannedName": "ASLI ASLANTÜRK",
+        "matchedStudentId": "stu-41534c4920",
+        "studentNo": "415",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 4,
+            "blank": 5,
+            "net": 30
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 36.5,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769113-18",
+        "scannedName": "MERT ASLANTÜRK",
+        "matchedStudentId": "stu-4d45525420",
+        "studentNo": "",
+        "className": "12 TMA",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 5,
+            "blank": 6,
+            "net": 27.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 40,
+            "net": 0
+          }
+        ],
+        "totalNet": 31.25,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769113-19",
+        "scannedName": "SUDE ASİYE ALTUNSU",
+        "matchedStudentId": "stu-5355444520",
+        "studentNo": "258",
+        "className": "12 TMB",
+        "branch": "Eşit Ağırlık",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 25,
+            "wrong": 5,
+            "blank": 10,
+            "net": 23.75
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 36,
+            "net": 2.75
+          }
+        ],
+        "totalNet": 37.5,
+        "prevTotalNet": 46.5,
+        "deltaTotalNet": -9,
+        "deltaTotalRate": -19.4,
+        "branchDeltas": {
+          "TYT Türkçe": -6.75,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -1.5,
+          "TYT Felsefe": -2,
+          "TYT Din Kültürü": -0.25,
+          "TYT Matematik": 1.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -22.1,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -50,
+          "TYT Felsefe": -50,
+          "TYT Din Kültürü": -9.1,
+          "TYT Matematik": 120
+        }
+      },
+      {
+        "id": "row-1792645769113-20",
+        "scannedName": "KAAN USTA",
+        "matchedStudentId": "stu-4b41414e20",
+        "studentNo": "521",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 6,
+            "blank": 6,
+            "net": 26.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 23,
+            "wrong": 5,
+            "blank": 12,
+            "net": 21.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 4,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 4,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 2,
+            "net": 4
+          }
+        ],
+        "totalNet": 54.5,
+        "prevTotalNet": 61.75,
+        "deltaTotalNet": -7.25,
+        "deltaTotalRate": -11.7,
+        "branchDeltas": {
+          "TYT Türkçe": -0.25,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": 0.25,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -5,
+          "TYT Matematik": -8.5,
+          "TYT Fizik": 0.5,
+          "TYT Kimya": 1.75,
+          "TYT Biyoloji": 4
+        },
+        "branchRates": {
+          "TYT Türkçe": -0.9,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": -28.1
+        }
+      },
+      {
+        "id": "row-1792645769113-21",
+        "scannedName": "DAMLASU YILDIRIM",
+        "matchedStudentId": "stu-44414d4c41",
+        "studentNo": "260",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 11,
+            "blank": 2,
+            "net": 24.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 1,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 2,
+            "blank": 3,
+            "net": -0.5
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 1,
+            "net": 1.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 19,
+            "wrong": 5,
+            "blank": 16,
+            "net": 17.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 2,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 56.5,
+        "prevTotalNet": 53.75,
+        "deltaTotalNet": 2.75,
+        "deltaTotalRate": 5.1,
+        "branchDeltas": {
+          "TYT Türkçe": -0.5,
+          "TYT Tarih": 1.25,
+          "TYT Coğrafya": -0.25,
+          "TYT Felsefe": 1.5,
+          "TYT Din Kültürü": -1.25,
+          "TYT Matematik": 3,
+          "TYT Fizik": -2.25,
+          "TYT Kimya": 1.25,
+          "TYT Biyoloji": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -2,
+          "TYT Tarih": 83.3,
+          "TYT Din Kültürü": -33.3,
+          "TYT Matematik": 20.3,
+          "TYT Fizik": -100,
+          "TYT Kimya": 35.7,
+          "TYT Biyoloji": 0
+        }
+      },
+      {
+        "id": "row-1792645769113-22",
+        "scannedName": "YUSUF MUHAMMED ŞEN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "726",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 6,
+            "blank": 5,
+            "net": 27.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 1,
+            "blank": 3,
+            "net": 0.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 5,
+            "wrong": 0,
+            "blank": 0,
+            "net": 5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 6,
+            "blank": 5,
+            "net": 27.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 80.75,
+        "prevTotalNet": 80.5,
+        "deltaTotalNet": 0.25,
+        "deltaTotalRate": 0.3,
+        "branchDeltas": {
+          "TYT Türkçe": -7,
+          "TYT Tarih": 3.5,
+          "TYT Coğrafya": 1,
+          "TYT Felsefe": 0.75,
+          "TYT Din Kültürü": 1.25,
+          "TYT Matematik": 2,
+          "TYT Fizik": 1.25,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -2.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -20.3,
+          "TYT Tarih": 233.3,
+          "TYT Coğrafya": 100,
+          "TYT Din Kültürü": 33.3,
+          "TYT Matematik": 7.8,
+          "TYT Fizik": 35.7,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -41.7
+        }
+      },
+      {
+        "id": "row-1792645769114-23",
+        "scannedName": "YUSUF EREN DOĞAN",
+        "matchedStudentId": "stu-5955535546",
+        "studentNo": "170",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 26,
+            "wrong": 10,
+            "blank": 4,
+            "net": 23.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 0,
+            "blank": 4,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 33,
+            "wrong": 3,
+            "blank": 4,
+            "net": 32.25
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 6,
+            "wrong": 1,
+            "blank": 0,
+            "net": 5.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 1,
+            "net": 2.25
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 0,
+            "net": 4.75
+          }
+        ],
+        "totalNet": 71.5,
+        "prevTotalNet": 84.75,
+        "deltaTotalNet": -13.25,
+        "deltaTotalRate": -15.6,
+        "branchDeltas": {
+          "TYT Türkçe": -5.5,
+          "TYT Tarih": -2.75,
+          "TYT Coğrafya": 0.5,
+          "TYT Felsefe": -2,
+          "TYT Din Kültürü": -2,
+          "TYT Matematik": -0.5,
+          "TYT Fizik": 1.25,
+          "TYT Kimya": -1,
+          "TYT Biyoloji": -1.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -19,
+          "TYT Tarih": -73.3,
+          "TYT Coğrafya": 33.3,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": -1.5,
+          "TYT Fizik": 27.8,
+          "TYT Kimya": -30.8,
+          "TYT Biyoloji": -20.8
+        }
+      },
+      {
+        "id": "row-1792645769114-24",
+        "scannedName": "RÜZGAR DURMAZ",
+        "matchedStudentId": "stu-52c39c5a47",
+        "studentNo": "759",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 20,
+            "wrong": 19,
+            "blank": 1,
+            "net": 15.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 4,
+            "blank": 0,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 12,
+            "wrong": 14,
+            "blank": 14,
+            "net": 8.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 1,
+            "net": 2.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 2,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 1,
+            "net": 2.5
+          }
+        ],
+        "totalNet": 33.5,
+        "prevTotalNet": 47.75,
+        "deltaTotalNet": -14.25,
+        "deltaTotalRate": -29.8,
+        "branchDeltas": {
+          "TYT Türkçe": -11.5,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -1,
+          "TYT Felsefe": -2.75,
+          "TYT Din Kültürü": 1,
+          "TYT Matematik": 1,
+          "TYT Fizik": 0.25,
+          "TYT Kimya": 1,
+          "TYT Biyoloji": 0.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -43,
+          "TYT Tarih": -100,
+          "TYT Coğrafya": -100,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": 66.7,
+          "TYT Matematik": 13.3,
+          "TYT Fizik": 12.5,
+          "TYT Kimya": 66.7,
+          "TYT Biyoloji": 11.1
+        }
+      },
+      {
+        "id": "row-1792645769114-25",
+        "scannedName": "CEMRE SUNAY DOĞAN",
+        "matchedStudentId": "stu-43454d5245",
+        "studentNo": "408",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 27,
+            "wrong": 8,
+            "blank": 5,
+            "net": 25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 0,
+            "blank": 3,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 15,
+            "wrong": 14,
+            "blank": 11,
+            "net": 11.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 5,
+            "blank": 1,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 2,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 44.25,
+        "prevTotalNet": 36.75,
+        "deltaTotalNet": 7.5,
+        "deltaTotalRate": 20.4,
+        "branchDeltas": {
+          "TYT Türkçe": 5.5,
+          "TYT Tarih": -1,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": -0.75,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 2.25,
+          "TYT Fizik": -2,
+          "TYT Kimya": 2.25,
+          "TYT Biyoloji": 1.25
+        },
+        "branchRates": {
+          "TYT Türkçe": 28.2,
+          "TYT Tarih": -33.3,
+          "TYT Felsefe": -100,
+          "TYT Matematik": 24.3,
+          "TYT Fizik": -114.3,
+          "TYT Kimya": 900,
+          "TYT Biyoloji": 55.6
+        }
+      },
+      {
+        "id": "row-1792645769114-26",
+        "scannedName": "BEYZA TEKNEOĞLU",
+        "matchedStudentId": "stu-4245595a41",
+        "studentNo": "256",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 31,
+            "wrong": 6,
+            "blank": 3,
+            "net": 29.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 2,
+            "blank": 30,
+            "net": 7.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 1,
+            "blank": 3,
+            "net": 2.75
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 5,
+            "wrong": 1,
+            "blank": 1,
+            "net": 4.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 1,
+            "net": 3.75
+          }
+        ],
+        "totalNet": 48.25,
+        "prevTotalNet": 60.25,
+        "deltaTotalNet": -12,
+        "deltaTotalRate": -19.9,
+        "branchDeltas": {
+          "TYT Türkçe": -4.25,
+          "TYT Tarih": -1.5,
+          "TYT Coğrafya": 0.25,
+          "TYT Felsefe": -2.75,
+          "TYT Din Kültürü": -3.75,
+          "TYT Matematik": -0.75,
+          "TYT Fizik": 2.75,
+          "TYT Kimya": 0.25,
+          "TYT Biyoloji": -2.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -12.6,
+          "TYT Tarih": -100,
+          "TYT Felsefe": -100,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": -9.1,
+          "TYT Kimya": 5.6,
+          "TYT Biyoloji": -37.5
+        }
+      },
+      {
+        "id": "row-1792645769114-27",
+        "scannedName": "ALARA HANDE ORHAN",
+        "matchedStudentId": "stu-414c415241",
+        "studentNo": "432",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 29,
+            "wrong": 8,
+            "blank": 3,
+            "net": 27
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 4,
+            "net": -0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 2,
+            "wrong": 1,
+            "blank": 2,
+            "net": 1.75
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 10,
+            "wrong": 10,
+            "blank": 20,
+            "net": 7.5
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 4,
+            "blank": 0,
+            "net": 2
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 1,
+            "wrong": 2,
+            "blank": 4,
+            "net": 0.5
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 1,
+            "net": 2.5
+          }
+        ],
+        "totalNet": 47.25,
+        "prevTotalNet": 70.5,
+        "deltaTotalNet": -23.25,
+        "deltaTotalRate": -33,
+        "branchDeltas": {
+          "TYT Türkçe": -6,
+          "TYT Tarih": 2.25,
+          "TYT Coğrafya": -1.25,
+          "TYT Felsefe": -1.25,
+          "TYT Din Kültürü": -2.5,
+          "TYT Matematik": -11.5,
+          "TYT Fizik": -0.5,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -2.5
+        },
+        "branchRates": {
+          "TYT Türkçe": -18.2,
+          "TYT Tarih": 150,
+          "TYT Coğrafya": -125,
+          "TYT Felsefe": -41.7,
+          "TYT Din Kültürü": -50,
+          "TYT Matematik": -60.5,
+          "TYT Fizik": -20,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -50
+        }
+      },
+      {
+        "id": "row-1792645769114-28",
+        "scannedName": "KAYA BELGİN",
+        "matchedStudentId": "stu-4b41594120",
+        "studentNo": "198",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 19,
+            "wrong": 11,
+            "blank": 10,
+            "net": 16.25
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 9,
+            "wrong": 8,
+            "blank": 23,
+            "net": 7
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 1,
+            "net": 2.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 2,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 2,
+            "wrong": 4,
+            "blank": 0,
+            "net": 1
+          }
+        ],
+        "totalNet": 27.75,
+        "prevTotalNet": 63.75,
+        "deltaTotalNet": -36,
+        "deltaTotalRate": -56.5,
+        "branchDeltas": {
+          "TYT Türkçe": -16.25,
+          "TYT Tarih": -2.5,
+          "TYT Coğrafya": -0.75,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": -5,
+          "TYT Matematik": -8,
+          "TYT Fizik": 1.5,
+          "TYT Kimya": -1.25,
+          "TYT Biyoloji": -3.75
+        },
+        "branchRates": {
+          "TYT Türkçe": -50,
+          "TYT Tarih": -100,
+          "TYT Coğrafya": -100,
+          "TYT Din Kültürü": -100,
+          "TYT Matematik": -53.3,
+          "TYT Fizik": 200,
+          "TYT Kimya": -50,
+          "TYT Biyoloji": -78.9
+        }
+      },
+      {
+        "id": "row-1792645769114-29",
+        "scannedName": "ALİ HÜR YILDIRIM",
+        "matchedStudentId": "stu-414cc4b020",
+        "studentNo": "150",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "prevTotalNet": 0,
+        "deltaTotalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769114-30",
+        "scannedName": "DORUKHAN UNCU",
+        "matchedStudentId": "stu-444f52554b",
+        "studentNo": "475",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 32,
+            "wrong": 6,
+            "blank": 2,
+            "net": 30.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 0,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 19,
+            "wrong": 5,
+            "blank": 16,
+            "net": 17.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 3,
+            "wrong": 3,
+            "blank": 1,
+            "net": 2.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 3,
+            "blank": 0,
+            "net": 3.25
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 4,
+            "wrong": 2,
+            "blank": 0,
+            "net": 3.5
+          }
+        ],
+        "totalNet": 66.25,
+        "prevTotalNet": 78.75,
+        "deltaTotalNet": -12.5,
+        "deltaTotalRate": -15.9,
+        "branchDeltas": {
+          "TYT Türkçe": -1,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -1.75,
+          "TYT Felsefe": -1.25,
+          "TYT Din Kültürü": 1.25,
+          "TYT Matematik": -6.25,
+          "TYT Fizik": -1,
+          "TYT Kimya": -2.5,
+          "TYT Biyoloji": 0
+        },
+        "branchRates": {
+          "TYT Türkçe": -3.2,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": -87.5,
+          "TYT Felsefe": -33.3,
+          "TYT Din Kültürü": 50,
+          "TYT Matematik": -26,
+          "TYT Fizik": -30.8,
+          "TYT Kimya": -43.5,
+          "TYT Biyoloji": 0
+        }
+      },
+      {
+        "id": "row-1792645769114-31",
+        "scannedName": "KORAY AREL BAYGÖL",
+        "matchedStudentId": "stu-4b4f524159",
+        "studentNo": "915",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "prevTotalNet": 0,
+        "deltaTotalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769114-32",
+        "scannedName": "OLCAY MALİK MUSTAFA EMİR",
+        "matchedStudentId": "stu-4f4c434159",
+        "studentNo": "405",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 28,
+            "wrong": 8,
+            "blank": 4,
+            "net": 26
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 3,
+            "wrong": 2,
+            "blank": 0,
+            "net": 2.5
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 1,
+            "wrong": 3,
+            "blank": 1,
+            "net": 0.25
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 4,
+            "wrong": 0,
+            "blank": 1,
+            "net": 4
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 8,
+            "wrong": 1,
+            "blank": 31,
+            "net": 7.75
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 3,
+            "blank": 2,
+            "net": 1.25
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 4,
+            "wrong": 1,
+            "blank": 2,
+            "net": 3.75
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 2,
+            "wrong": 2,
+            "blank": 2,
+            "net": 1.5
+          }
+        ],
+        "totalNet": 47,
+        "prevTotalNet": 0,
+        "deltaTotalNet": 47,
+        "branchDeltas": {
+          "TYT Türkçe": 26,
+          "TYT Tarih": 2.5,
+          "TYT Coğrafya": 0.25,
+          "TYT Felsefe": 4,
+          "TYT Matematik": 7.75,
+          "TYT Fizik": 1.25,
+          "TYT Kimya": 3.75,
+          "TYT Biyoloji": 1.5
+        },
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769114-33",
+        "scannedName": "ONUR CAN İLHAN",
+        "matchedStudentId": "stu-4f4e555220",
+        "studentNo": "512",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [],
+        "totalNet": 0,
+        "prevTotalNet": 0,
+        "deltaTotalNet": 0,
+        "branchDeltas": {},
+        "branchRates": {}
+      },
+      {
+        "id": "row-1792645769114-34",
+        "scannedName": "REŞAT EMRE ULUTÜRK",
+        "matchedStudentId": "stu-5245c59e41",
+        "studentNo": "545",
+        "className": "12 MFA",
+        "branch": "Sayısal",
+        "subjects": [
+          {
+            "subjectName": "TYT Türkçe",
+            "questionCount": 40,
+            "correct": 30,
+            "wrong": 6,
+            "blank": 4,
+            "net": 28.5
+          },
+          {
+            "subjectName": "TYT Tarih",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Coğrafya",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Felsefe",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Din Kültürü",
+            "questionCount": 5,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 5,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Matematik",
+            "questionCount": 40,
+            "correct": 10,
+            "wrong": 4,
+            "blank": 26,
+            "net": 9
+          },
+          {
+            "subjectName": "TYT Fizik",
+            "questionCount": 7,
+            "correct": 2,
+            "wrong": 4,
+            "blank": 1,
+            "net": 1
+          },
+          {
+            "subjectName": "TYT Kimya",
+            "questionCount": 7,
+            "correct": 0,
+            "wrong": 0,
+            "blank": 7,
+            "net": 0
+          },
+          {
+            "subjectName": "TYT Biyoloji",
+            "questionCount": 6,
+            "correct": 0,
+            "wrong": 1,
+            "blank": 5,
+            "net": -0.25
+          }
+        ],
+        "totalNet": 38.25,
+        "prevTotalNet": 33.5,
+        "deltaTotalNet": 4.75,
+        "deltaTotalRate": 14.2,
+        "branchDeltas": {
+          "TYT Türkçe": -1.5,
+          "TYT Tarih": 0,
+          "TYT Coğrafya": 0,
+          "TYT Felsefe": 0,
+          "TYT Din Kültürü": 0,
+          "TYT Matematik": 5.5,
+          "TYT Fizik": 1,
+          "TYT Kimya": 0,
+          "TYT Biyoloji": -0.25
+        },
+        "branchRates": {
+          "TYT Türkçe": -5,
+          "TYT Matematik": 157.1
+        }
+      }
+    ],
+    "isAnalyzed": true,
+    "isSaved": true
+  }
+}
